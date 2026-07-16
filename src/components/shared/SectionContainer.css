@@ -1,0 +1,11 @@
+.section-container {
+  padding: 4rem 0;
+}
+
+.bg-white {
+  background-color: var(--bg-white);
+}
+
+.bg-light {
+  background-color: var(--bg-light-blue);
+}
