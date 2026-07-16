@@ -1,0 +1,334 @@
+/* Video Showcase Section */
+.video-showcase-section {
+  width: 100%;
+  background-color: var(--bg-body, #FAFBFC);
+  padding: 6rem 0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.video-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.video-line {
+  height: 1px;
+  width: 60px;
+  background-color: var(--primary-blue, #0F4C81);
+  opacity: 0.2;
+}
+
+.video-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  color: var(--primary-blue, #0F4C81);
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.video-title {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--text-primary, #1F2937);
+  line-height: 1.15;
+}
+
+.video-title span {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--primary-blue, #0F4C81);
+}
+
+/* Video Carousel Container */
+.video-carousel-container {
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  perspective: 1000px;
+  min-height: 500px;
+}
+
+/* Video Navigation Arrows */
+.video-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--bg-white, #ffffff);
+  border: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  color: var(--text-primary, #1F2937);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.video-nav-btn.prev {
+  left: 2rem;
+}
+
+.video-nav-btn.next {
+  right: 2rem;
+}
+
+.video-nav-btn:hover {
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  color: var(--primary-blue, #0F4C81);
+}
+
+.video-nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: translateY(-50%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .video-nav-btn {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .video-nav-btn.prev {
+    left: 0.5rem;
+  }
+  
+  .video-nav-btn.next {
+    right: 0.5rem;
+  }
+  
+  .video-title {
+    font-size: 2.5rem;
+  }
+  
+  .video-carousel-container {
+    min-height: 300px;
+  }
+}
+
+/* Video Card */
+.video-card-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 450px; /* 16:9 aspect ratio */
+  transform-origin: center center;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .video-card-wrapper {
+    width: 600px;
+    height: 337.5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-card-wrapper {
+    width: 320px;
+    height: 180px;
+  }
+}
+
+.video-card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.video-card-inner:hover .video-overlay {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.video-play-btn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary-blue, #0F4C81);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.video-card-inner:hover .video-play-btn {
+  transform: scale(1.1);
+  background: #ffffff;
+}
+
+.video-play-icon {
+  margin-left: 6px; /* Offset for visual centering of play triangle */
+}
+
+.video-title-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+}
+
+.video-card-title {
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 768px) {
+  .video-play-btn {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .video-title-bar {
+    padding: 1rem;
+  }
+  
+  .video-card-title {
+    font-size: 1rem;
+  }
+}
+
+/* Video Modal */
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-modal-container {
+  width: 90%;
+  max-width: 1200px;
+  position: relative;
+}
+
+.video-player-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+  z-index: 1001;
+}
+
+.video-modal-close:hover {
+  color: #d1d5db;
+  transform: scale(1.1);
+}
+
+.video-modal-title {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .video-modal-container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .video-modal-close {
+    top: -40px;
+    right: 1rem;
+  }
+  
+  .video-modal-title {
+    bottom: -40px;
+    left: 1rem;
+    font-size: 1rem;
+  }
+}

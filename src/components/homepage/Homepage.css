@@ -1,0 +1,207 @@
+/* Homepage Global Sections */
+.homepage-section {
+  padding: 6rem 1rem;
+  background-color: var(--bg-body, #FAFBFC);
+}
+
+.homepage-section.white-bg {
+  background-color: var(--bg-white, #ffffff);
+}
+
+.homepage-container {
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+}
+
+/* Typography for new sections */
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--primary-blue, #0F4C81);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.section-text {
+  font-family: var(--font-sans);
+  color: var(--text-secondary, #6B7280);
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+/* Mission Section */
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .mission-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.mission-content {
+  max-width: 500px;
+}
+
+.mission-image-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-color: #e5e7eb;
+  border-radius: var(--border-radius, 8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Focus Areas Section */
+.focus-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .focus-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .focus-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.focus-card {
+  background-color: var(--bg-white, #ffffff);
+  padding: 2.5rem 2rem;
+  border-radius: var(--border-radius, 8px);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid transparent;
+}
+
+.focus-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-top-color: var(--secondary-blue, #2F80ED);
+}
+
+.focus-icon-placeholder {
+  width: 48px;
+  height: 48px;
+  background-color: var(--bg-light-blue, #f0f7ff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-blue, #2F80ED);
+}
+
+.focus-card-title {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary, #1F2937);
+  margin-bottom: 0.75rem;
+}
+
+.focus-card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-secondary, #6B7280);
+  line-height: 1.6;
+}
+
+/* Quote Section */
+.quote-section {
+  text-align: center;
+  padding: 8rem 1rem;
+  background-color: var(--bg-white, #ffffff);
+}
+
+.quote-text {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--primary-blue, #0F4C81);
+  line-height: 1.4;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Gallery Intro Section */
+.gallery-intro {
+  text-align: center;
+  padding: 4rem 1rem 0;
+  background-color: transparent;
+}
+
+.gallery-intro-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-primary, #1F2937);
+  margin-bottom: 1rem;
+}
+
+.gallery-intro-text {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  color: var(--text-secondary, #6B7280);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 6rem 1rem;
+  background-color: var(--bg-light-blue, #f0f7ff);
+}
+
+.cta-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--primary-blue, #0F4C81);
+  margin-bottom: 2.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary-blue, #0F4C81);
+  color: var(--bg-white, #ffffff);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(15, 76, 129, 0.2);
+}
+
+.cta-button:hover {
+  background-color: var(--primary-blue-hover, #0a355c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(15, 76, 129, 0.3);
+}

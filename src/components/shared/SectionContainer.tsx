@@ -4,7 +4,7 @@ import './SectionContainer.css';
 interface SectionContainerProps {
   children: React.ReactNode;
   className?: string;
-  background?: 'white' | 'light';
+  background?: 'white' | 'light' | 'transparent';
   id?: string;
 }
 
