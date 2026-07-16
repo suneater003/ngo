@@ -205,42 +205,60 @@
   transform: scale(1.06); /* Match gallery hover */
 }
 
+.video-duration {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
 .video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 55%, transparent 100%);
+  background: rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s ease;
+  transition: background 0.4s ease;
 }
 
 .video-card-inner:hover .video-overlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 55%, transparent 100%);
+  background: rgba(0, 0, 0, 0.25);
 }
 
 .video-play-btn {
-  width: 86px; /* Increased 20% from 72px */
+  width: 86px;
   height: 86px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25); /* Glassmorphism */
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15); /* Soft glass effect */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .video-card-inner:hover .video-play-btn {
-  transform: scale(1.1);
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255, 255, 255, 1);
-  color: var(--primary-blue, #0F4C81);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  transform: scale(1.15);
+  background: rgba(255, 255, 255, 0.25); /* Retain glass effect on hover */
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255,255,255,0.15);
+  color: #ffffff;
 }
 
 .video-play-icon {
@@ -252,7 +270,9 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 1.5rem;
+  padding: 3rem 1.5rem 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 40%, transparent 100%);
+  pointer-events: none;
 }
 
 .video-card-title {
