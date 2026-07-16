@@ -6,13 +6,16 @@ export const VideoShowcase = () => {
     <section className="video-showcase-section">
       <div className="video-header">
         <div className="video-title-wrapper">
-          <div className="video-line"></div>
+          <span className="video-line" />
           <span className="video-subtitle">Video Gallery</span>
-          <div className="video-line"></div>
+          <span className="video-line" />
         </div>
         <h2 className="video-title">
           Watch our stories <span>unfold</span>
         </h2>
+        <p className="video-description">
+          Discover our initiatives in motion through workshops, community stories, and moments of impact.
+        </p>
       </div>
       
       <VideoCarousel />

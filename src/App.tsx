@@ -5,6 +5,7 @@ import GallerySection from './components/gallery/GallerySection';
 import { VideoShowcase } from './components/video/VideoShowcase';
 
 function App() {
+  console.log("App rendered with new VideoShowcase");
   return (
     <div className="app" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Navbar />
