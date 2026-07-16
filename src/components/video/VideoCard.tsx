@@ -19,27 +19,27 @@ export const VideoCard = ({ video, isActive, offset, onClick }: VideoCardProps) 
   const variants = {
     center: {
       x: 0,
-      scale: 1,
+      scale: 1.08, // Reduced center scale to 1.08 per request
       zIndex: 10,
       opacity: 1,
       filter: 'brightness(1)',
     },
     left: {
-      x: -400, // Partial preview offset
-      scale: 0.8,
+      x: -320, // Adjusted offset for smaller cards
+      scale: 0.85,
       zIndex: 5,
-      opacity: 0.7,
-      filter: 'brightness(0.6)',
+      opacity: 0.8,
+      filter: 'brightness(0.5)',
     },
     right: {
-      x: 400,
-      scale: 0.8,
+      x: 320,
+      scale: 0.85,
       zIndex: 5,
-      opacity: 0.7,
-      filter: 'brightness(0.6)',
+      opacity: 0.8,
+      filter: 'brightness(0.5)',
     },
     hidden: {
-      x: offset > 1 ? 800 : -800,
+      x: offset > 1 ? 600 : -600,
       scale: 0.5,
       zIndex: 0,
       opacity: 0,
