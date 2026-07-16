@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { videoData } from './videoData';
 import type { VideoItem } from './videoData';
@@ -12,9 +12,9 @@ export const VideoCarousel = () => {
 
   const numItems = videoData.length;
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setActiveIndex((prev) => (prev + 1) % numItems);
-  };
+  }, [numItems]);
 
   const prevSlide = () => {
     setActiveIndex((prev) => (prev - 1 + numItems) % numItems);
@@ -26,7 +26,7 @@ export const VideoCarousel = () => {
     
     const interval = setInterval(nextSlide, 5000); // 5 seconds
     return () => clearInterval(interval);
-  }, [isPaused, selectedVideo]);
+  }, [isPaused, selectedVideo, nextSlide]);
 
   const handleCardClick = (index: number) => {
     if (index === activeIndex) {

@@ -137,22 +137,22 @@
   justify-content: center;
   touch-action: none;
   cursor: grab;
-  /* Softer, smoother edge fade mask */
-  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  /* Softer, smoother edge fade mask (Matched to Video Showcase 7.5%) */
+  mask-image: linear-gradient(to right, transparent, black 7.5%, black 92.5%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 7.5%, black 92.5%, transparent);
 }
 
 .carousel-wrapper:active {
   cursor: grabbing;
 }
 
-/* Optional grey haze overlay to soften the edges further */
+/* Optional grey haze overlay to soften the edges further (Matched to Video Showcase) */
 .carousel-wrapper::after {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(to right, rgba(250, 251, 252, 0.9) 0%, rgba(250, 251, 252, 0) 15%, rgba(250, 251, 252, 0) 85%, rgba(250, 251, 252, 0.9) 100%);
+  background: linear-gradient(to right, rgba(249, 250, 251, 0.6) 0%, rgba(249, 250, 251, 0) 7.5%, rgba(249, 250, 251, 0) 92.5%, rgba(249, 250, 251, 0.6) 100%);
 }
 
 .carousel-track {
@@ -192,15 +192,15 @@
   background: #ffffff;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
   transform: translateY(-50%) scale(1.08);
-  color: var(--primary-blue, #004b87);
+  color: var(--primary-blue, #0F4C81);
 }
 
 .carousel-floating-nav.left {
-  left: 2rem;
+  left: 6rem;
 }
 
 .carousel-floating-nav.right {
-  right: 2rem;
+  right: 6rem;
 }
 
 /* Gallery Cards */
