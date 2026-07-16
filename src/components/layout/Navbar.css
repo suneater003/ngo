@@ -1,6 +1,6 @@
 /* Core Navbar */
 .navbar {
-  background-color: var(--primary-blue, #0F4C81);
+  background-color: rgba(15, 76, 129, 0.98);
   color: var(--bg-white, #ffffff);
   height: 80px; /* Explicit height */
   display: flex;
@@ -8,14 +8,18 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 15px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .navbar.scrolled {
   height: 70px;
-  background-color: rgba(15, 76, 129, 0.98); /* Opaque primary-blue */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(10px);
+  background-color: rgba(15, 76, 129, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .navbar-container {
@@ -32,34 +36,35 @@
   gap: 1.25rem; /* Better spacing between logo and text */
   text-decoration: none;
   color: var(--bg-white, #ffffff);
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-brand:hover {
   opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 .navbar-logo-circle {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #f4f7f9 100%);
   color: var(--primary-blue, #0F4C81);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans); /* Use sans for a cleaner, modern SG monogram */
   font-weight: 700;
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   letter-spacing: 0.05em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, font-size 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 1);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .navbar.scrolled .navbar-logo-circle {
   width: 40px;
   height: 40px;
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 
 .navbar-title-container {
@@ -71,30 +76,31 @@
 .navbar-title {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: 1.6rem; /* More prominent */
+  font-size: 1.35rem; /* Reduced size, increased weight for quality */
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   line-height: 1.1;
-  transition: font-size 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .navbar.scrolled .navbar-title {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
 }
 
 .navbar-subtitle {
   font-family: var(--font-sans);
-  font-size: 0.7rem; /* Smaller, lighter, elegant */
-  font-weight: 400;
-  opacity: 0.8;
+  font-size: 0.65rem;
+  font-weight: 500;
+  opacity: 0.85;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.25em; /* Increased tracking for elegance */
   margin-top: 0.25rem;
-  transition: font-size 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .navbar.scrolled .navbar-subtitle {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
 }
 
 /* Navigation Links */
@@ -106,30 +112,37 @@
 
 .navbar-links a {
   font-family: var(--font-sans);
-  color: var(--bg-white, #ffffff);
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   position: relative;
   padding: 0.5rem 0;
   transition: color 0.3s ease;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-/* Modern hover animation (subtle underline) */
+/* Modern hover animation (elegant centered thin underline) */
 .navbar-links a::after {
   content: '';
   position: absolute;
   width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--bg-white, #ffffff);
+  height: 1px;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
   transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  border-radius: 2px;
 }
 
-.navbar-links a:hover::after {
+.navbar-links a:hover,
+.navbar-links a.active {
+  color: #ffffff;
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
   width: 100%;
 }
 
@@ -162,7 +175,7 @@
   .navbar-logo-circle {
     width: 40px;
     height: 40px;
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
   
   .navbar-title {
@@ -170,7 +183,8 @@
   }
   
   .navbar-subtitle {
-    font-size: 0.65rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
   }
 
   .navbar-links {
@@ -180,8 +194,9 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 75, 135, 0.98);
-    backdrop-filter: blur(8px);
+    background-color: rgba(15, 76, 129, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 1.5rem;
     gap: 1.5rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
@@ -196,8 +211,10 @@
     display: none; /* Disable underline effect on mobile */
   }
 
-  .navbar-links a:hover {
-    color: var(--bg-light-blue, #e0f0ff);
+  .navbar-links a:hover,
+  .navbar-links a.active {
+    color: #ffffff;
+    opacity: 1;
   }
 
   .navbar-toggle {

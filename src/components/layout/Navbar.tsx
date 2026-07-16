@@ -30,7 +30,7 @@ export const Navbar = () => {
         </a>
 
         <nav className={`navbar-links ${isOpen ? 'open' : ''}`}>
-          <a href="/" onClick={() => setIsOpen(false)}>Gallery</a>
+          <a href="/" className="active" onClick={() => setIsOpen(false)}>Gallery</a>
         </nav>
 
         <button 
