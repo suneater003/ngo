@@ -1,7 +1,7 @@
 /* Gallery Section Core */
 .gallery-section {
   width: 100%;
-  background: #fafbfc; /* Subtle off-white to make the edge fade slightly grey */
+  background: transparent; /* Remove boxed background, use body bg */
   padding: 6rem 1rem;
   overflow: hidden;
   position: relative;
@@ -13,7 +13,7 @@
 /* Header & Typography */
 .gallery-header {
   text-align: center;
-  margin-bottom: 6rem; /* Increased vertical spacing between header/stats and carousel */
+  margin-bottom: 6rem;
   max-width: 800px;
   width: 100%;
 }
@@ -22,45 +22,49 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .gallery-line {
   height: 1px;
-  width: 40px;
-  background-color: var(--primary-blue, #004b87);
-  opacity: 0.3;
+  width: 60px;
+  background-color: var(--primary-blue, #0F4C81);
+  opacity: 0.2;
 }
 
 .gallery-subtitle {
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.875rem;
-  color: var(--primary-blue, #004b87);
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  color: var(--primary-blue, #0F4C81);
+  font-family: var(--font-sans);
   font-weight: 600;
 }
 
 .gallery-title {
-  font-size: 2.5rem;
-  font-weight: 300;
-  color: #1a1a1a;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--text-primary, #1F2937);
+  margin-bottom: 2rem;
+  line-height: 1.15;
 }
 
 .gallery-title span {
+  font-family: var(--font-serif);
   font-style: italic;
-  font-weight: 600;
-  color: var(--primary-blue, #004b87);
+  font-weight: 500;
+  color: var(--primary-blue, #0F4C81);
 }
 
 .gallery-description {
-  color: #666;
+  font-family: var(--font-sans);
+  color: var(--text-secondary, #6B7280);
   font-size: 1.125rem;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto 3.5rem; /* Increased vertical spacing */
+  line-height: 1.7;
+  max-width: 500px; /* Reduced width for better readability */
+  margin: 0 auto 4rem; /* Increased spacing to stats */
 }
 
 /* Statistics Row */
@@ -68,7 +72,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 5rem; /* Increased spacing between stats */
   flex-wrap: wrap;
 }
 
@@ -80,24 +84,27 @@
 }
 
 .gallery-stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--primary-blue, #004b87);
+  font-family: var(--font-sans);
+  font-size: 3rem; /* Larger numbers */
+  font-weight: 800; /* Bolder */
+  color: var(--primary-blue, #0F4C81);
   line-height: 1;
 }
 
 .gallery-stat-label {
-  font-size: 0.875rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem; /* Smaller labels */
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #666;
-  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary, #6B7280);
+  font-weight: 400; /* Lighter weight */
 }
 
 .gallery-stat-divider {
   width: 1px;
-  height: 40px;
-  background-color: #e5e5e5;
+  height: 50px;
+  background-color: var(--border-color, #e5e7eb);
+  opacity: 0.7;
 }
 
 /* 3D Carousel Container */

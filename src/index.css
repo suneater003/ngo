@@ -1,17 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
 :root {
-  /* Color Palette - Strict Blue & White */
-  --primary-blue: #004b87;
-  --primary-blue-hover: #003a6c;
-  --secondary-blue: #0073e6;
-  --secondary-blue-hover: #005bb5;
+  /* Color Palette - Premium NGO */
+  --primary-blue: #0F4C81;
+  --primary-blue-hover: #0a355c;
+  --secondary-blue: #2F80ED;
+  --secondary-blue-hover: #1e61c2;
   --bg-white: #ffffff;
+  --bg-body: #FAFBFC;
   --bg-light-blue: #f0f7ff;
-  --text-dark: #333333;
-  --text-muted: #666666;
-  --border-color: #e0e0e0;
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+  --border-color: #e5e7eb;
   
   /* Typography */
-  --font-family: 'Inter', 'Roboto', sans-serif;
+  --font-sans: 'Inter', 'Roboto', sans-serif;
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', serif;
   
   /* Spacing & Layout */
   --border-radius: 8px;
@@ -27,9 +31,9 @@
 }
 
 body {
-  font-family: var(--font-family);
-  background-color: var(--bg-white);
-  color: var(--text-dark);
+  font-family: var(--font-sans);
+  background-color: var(--bg-body);
+  color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
