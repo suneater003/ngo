@@ -87,12 +87,12 @@ export function InfiniteCarousel({ items, onCardClick, isLightboxOpen }: Infinit
 
   const variants = {
     center: { x: 0, y: 0, scale: 1, opacity: 1, zIndex: 5 },
-    left: { x: -280, y: 20, scale: 0.85, opacity: 0.8, zIndex: 4 },
-    leftFar: { x: -500, y: 40, scale: 0.7, opacity: 0.5, zIndex: 3 },
-    right: { x: 280, y: 20, scale: 0.85, opacity: 0.8, zIndex: 4 },
-    rightFar: { x: 500, y: 40, scale: 0.7, opacity: 0.5, zIndex: 3 },
-    hiddenLeft: { x: -700, y: 60, scale: 0.5, opacity: 0, zIndex: 1 },
-    hiddenRight: { x: 700, y: 60, scale: 0.5, opacity: 0, zIndex: 1 },
+    left: { x: -300, y: 20, scale: 0.85, opacity: 0.8, zIndex: 4 },
+    leftFar: { x: -540, y: 40, scale: 0.7, opacity: 0.5, zIndex: 3 },
+    right: { x: 300, y: 20, scale: 0.85, opacity: 0.8, zIndex: 4 },
+    rightFar: { x: 540, y: 40, scale: 0.7, opacity: 0.5, zIndex: 3 },
+    hiddenLeft: { x: -760, y: 60, scale: 0.5, opacity: 0, zIndex: 1 },
+    hiddenRight: { x: 760, y: 60, scale: 0.5, opacity: 0, zIndex: 1 },
   };
 
   return (
