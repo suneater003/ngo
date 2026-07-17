@@ -1,0 +1,386 @@
+/* Video Showcase Section */
+.video-showcase-section {
+  width: 100%;
+  background-color: #F9FAFB; /* Subtle alternate background */
+  padding: 0 0 8rem 0; /* Removed top padding to move it up ~80-100px */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-header {
+  text-align: center;
+  margin-bottom: 6rem; /* Matched exactly to gallery */
+  max-width: 800px;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.video-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem; /* Matched gallery */
+}
+
+.video-line {
+  height: 1px;
+  width: 60px;
+  background-color: var(--primary-blue, #0F4C81);
+  opacity: 0.2;
+}
+
+.video-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  color: var(--primary-blue, #0F4C81);
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.video-title {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--text-primary, #1F2937);
+  line-height: 1.15;
+  margin-bottom: 2rem;
+}
+
+.video-title span {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--primary-blue, #0F4C81);
+}
+
+.video-description {
+  font-family: var(--font-sans);
+  color: var(--text-secondary, #6B7280);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Video Carousel Container */
+.video-carousel-container {
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  perspective: 2000px;
+  height: 450px; /* Exact match with gallery */
+  /* Reduced edge fade width by 50% */
+  mask-image: linear-gradient(to right, transparent, black 7.5%, black 92.5%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 7.5%, black 92.5%, transparent);
+}
+
+/* Reduced haze width and opacity so side cards remain visible */
+.video-carousel-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(249, 250, 251, 0.6) 0%, rgba(249, 250, 251, 0) 7.5%, rgba(249, 250, 251, 0) 92.5%, rgba(249, 250, 251, 0.6) 100%);
+  z-index: 15;
+}
+
+/* Video Navigation Arrows */
+.video-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  color: #333;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.video-nav-btn.prev {
+  left: 6rem; /* Moved inward to sit over haze perfectly */
+}
+
+.video-nav-btn.next {
+  right: 6rem;
+}
+
+.video-nav-btn:hover {
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+  transform: translateY(-50%) scale(1.08);
+  color: var(--primary-blue, #0F4C81);
+}
+
+@media (max-width: 768px) {
+  .video-nav-btn {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .video-nav-btn.prev {
+    left: 0.5rem;
+  }
+  
+  .video-nav-btn.next {
+    right: 0.5rem;
+  }
+  
+  .video-title {
+    font-size: 2.5rem;
+  }
+  
+  .video-carousel-container {
+    height: 300px;
+  }
+}
+
+/* Video Card */
+.video-card-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px; /* Reduced to match image cards */
+  height: 225px; /* 16:9 aspect ratio */
+  /* Ensure it is exactly centered visually */
+  margin-left: -200px;
+  margin-top: -112.5px;
+  transform-origin: center center;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .video-card-wrapper {
+    width: 400px;
+    height: 225px;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-card-wrapper {
+    width: 320px;
+    height: 180px;
+  }
+}
+
+.video-card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px; /* Match gallery */
+  overflow: hidden;
+  position: relative;
+  /* Match gallery shadow */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.4s ease;
+}
+
+.video-card-inner:hover {
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3), 0 15px 30px -5px rgba(0, 0, 0, 0.15);
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.video-card-inner:hover .video-thumbnail {
+  transform: scale(1.06); /* Match gallery hover */
+}
+
+.video-duration {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.4s ease;
+}
+
+.video-card-inner:hover .video-overlay {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.video-play-btn {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15); /* Soft glass effect */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.video-card-inner:hover .video-play-btn {
+  transform: scale(1.15);
+  background: rgba(255, 255, 255, 0.25); /* Retain glass effect on hover */
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255,255,255,0.15);
+  color: #ffffff;
+}
+
+.video-play-icon {
+  margin-left: 6px;
+}
+
+.video-title-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem 1.5rem 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 40%, transparent 100%);
+  pointer-events: none;
+}
+
+.video-card-title {
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .video-play-btn {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .video-title-bar {
+    padding: 1rem;
+  }
+  
+  .video-card-title {
+    font-size: 1rem;
+  }
+}
+
+/* Video Modal */
+.video-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+}
+
+.video-modal-container {
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.video-player-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  background-color: #000;
+}
+
+.video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+  z-index: 1001;
+}
+
+.video-modal-close:hover {
+  color: #d1d5db;
+  transform: scale(1.1);
+}
+
+.video-modal-title {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .video-modal-container {
+    width: 100%;
+    margin-top: 40px;
+  }
+  
+  .video-modal-close {
+    top: -40px;
+    right: 0;
+  }
+  
+  .video-modal-title {
+    bottom: -40px;
+    left: 0;
+    font-size: 1rem;
+  }
+}
