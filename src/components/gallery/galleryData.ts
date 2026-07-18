@@ -12,62 +12,52 @@ export interface GalleryItem {
 export const galleryItems: GalleryItem[] = [
   {
     id: "1",
-    title: "Community Outreach",
-    eventName: "Rural Empowerment Drive",
-    category: "Community",
-    date: "March 12, 2026",
-    description: "Our volunteers reaching out to local artisans to provide essential raw materials and training.",
-    imageUrl: "https://images.unsplash.com/photo-1593113565214-80afcb4dd27c?q=80&w=800&auto=format&fit=crop",
-    altText: "Volunteers sitting with local women artisans"
+    title: "सखि व्यापार",
+    eventName: "रोज़गार पहल",
+    category: "व्यापार",
+    date: "मार्च 12, 2026",
+    description: "स्थानीय महिलाओं को आवश्यक कच्चा माल और प्रशिक्षण प्रदान करते हुए हमारे कार्यकर्ता।",
+    imageUrl: "/assets/image.png",
+    altText: "सखि व्यापार"
   },
   {
     id: "2",
-    title: "Skill Development",
-    eventName: "Weaving Workshop",
-    category: "Education",
-    date: "April 05, 2026",
-    description: "Teaching advanced weaving techniques to empower women with sustainable livelihood skills.",
-    imageUrl: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=800&auto=format&fit=crop",
-    altText: "Hands working on a traditional loom"
+    title: "कौशल विकास",
+    eventName: "सिलाई कार्यशाला",
+    category: "शिक्षा",
+    date: "अप्रैल 05, 2026",
+    description: "महिलाओं को आत्मनिर्भर बनाने के लिए उन्नत कौशल सिखाना।",
+    imageUrl: "/assets/image copy.png",
+    altText: "कौशल विकास कार्यशाला"
   },
   {
     id: "3",
-    title: "Healthcare Initiative",
-    eventName: "Free Medical Camp",
-    category: "Health",
-    date: "May 20, 2026",
-    description: "Providing free checkups and essential medicines to underserved communities in rural Bihar.",
-    imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop",
-    altText: "Doctor examining a patient in a medical camp"
+    title: "स्वास्थ्य पहल",
+    eventName: "निःशुल्क चिकित्सा शिविर",
+    category: "स्वास्थ्य",
+    date: "मई 20, 2026",
+    description: "ग्रामीण सखियों के लिए मुफ्त जांच और आवश्यक दवाएं प्रदान करना।",
+    imageUrl: "/assets/image copy 2.png",
+    altText: "चिकित्सा शिविर"
   },
   {
     id: "4",
-    title: "Women Empowerment",
-    eventName: "Leadership Seminar",
-    category: "Community",
-    date: "June 15, 2026",
-    description: "A seminar focused on building leadership qualities and financial independence among rural women.",
-    imageUrl: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=800&auto=format&fit=crop",
-    altText: "Women participating in a discussion"
+    title: "महिला सशक्तिकरण",
+    eventName: "नेतृत्व संगोष्ठी",
+    category: "समुदाय",
+    date: "जून 15, 2026",
+    description: "ग्रामीण महिलाओं के बीच नेतृत्व के गुण और वित्तीय स्वतंत्रता के निर्माण पर केंद्रित एक संगोष्ठी।",
+    imageUrl: "/assets/image copy 3.png",
+    altText: "संगोष्ठी में महिलाएं"
   },
   {
     id: "5",
-    title: "Educational Support",
-    eventName: "School Supply Distribution",
-    category: "Education",
-    date: "July 01, 2026",
-    description: "Distributing books, uniforms, and stationary to children to encourage primary education.",
-    imageUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800&auto=format&fit=crop",
-    altText: "Children holding new books and smiling"
-  },
-  {
-    id: "6",
-    title: "Sustainable Agriculture",
-    eventName: "Organic Farming Training",
-    category: "Livelihood",
-    date: "July 10, 2026",
-    description: "Training local farmers in organic farming methods to improve yield and sustainability.",
-    imageUrl: "https://images.unsplash.com/photo-1595841696677-6489ff3f8cd1?q=80&w=800&auto=format&fit=crop",
-    altText: "Farmer working in an organic field"
+    title: "शैक्षिक सहायता",
+    eventName: "पुस्तक वितरण",
+    category: "शिक्षा",
+    date: "जुलाई 01, 2026",
+    description: "प्राथमिक शिक्षा को प्रोत्साहित करने के लिए बच्चों को किताबें और स्टेशनरी वितरित करना।",
+    imageUrl: "/assets/image copy 4.png",
+    altText: "मुस्कुराते बच्चे"
   }
 ];

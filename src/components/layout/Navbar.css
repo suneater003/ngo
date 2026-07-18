@@ -1,25 +1,26 @@
 /* Core Navbar */
 .navbar {
-  background-color: rgba(15, 76, 129, 0.98);
-  color: var(--bg-white, #ffffff);
-  height: 80px; /* Explicit height */
+  background-color: rgba(255, 255, 255, 0.95); 
+  color: var(--color-midnight);
+  height: 75px;
   display: flex;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 100;
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 15px rgba(0, 0, 0, 0.03);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .navbar.scrolled {
-  height: 70px;
-  background-color: rgba(15, 76, 129, 0.95);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  height: 65px;
+  background-color: rgba(255, 255, 255, 0.65); /* More transparent for glass effect */
+  box-shadow: var(--shadow-hover);
+  backdrop-filter: blur(24px); /* Increased blur */
+  -webkit-backdrop-filter: blur(24px);
 }
 
 .navbar-container {
@@ -33,9 +34,7 @@
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 1.25rem; /* Better spacing between logo and text */
   text-decoration: none;
-  color: var(--bg-white, #ffffff);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -44,83 +43,33 @@
   transform: translateY(-1px);
 }
 
-.navbar-logo-circle {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ffffff 0%, #f4f7f9 100%);
-  color: var(--primary-blue, #0F4C81);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-sans); /* Use sans for a cleaner, modern SG monogram */
-  font-weight: 700;
-  font-size: 1.15rem;
-  letter-spacing: 0.05em;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 1);
+.navbar-logo {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.navbar.scrolled .navbar-logo-circle {
-  width: 40px;
-  height: 40px;
-  font-size: 1rem;
-}
-
-.navbar-title-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.navbar-title {
-  margin: 0;
-  font-family: var(--font-serif);
-  font-size: 1.35rem; /* Reduced size, increased weight for quality */
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  line-height: 1.1;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.navbar.scrolled .navbar-title {
-  font-size: 1.25rem;
-}
-
-.navbar-subtitle {
-  font-family: var(--font-sans);
-  font-size: 0.65rem;
-  font-weight: 500;
-  opacity: 0.85;
-  text-transform: uppercase;
-  letter-spacing: 0.25em; /* Increased tracking for elegance */
-  margin-top: 0.25rem;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.navbar.scrolled .navbar-subtitle {
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
+.navbar.scrolled .navbar-logo {
+  height: 45px;
 }
 
 /* Navigation Links */
 .navbar-links {
   display: flex;
-  gap: 3rem; /* Better spacing */
+  gap: 2.5rem;
   align-items: center;
 }
 
 .navbar-links a {
   font-family: var(--font-sans);
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
+  color: var(--color-midnight);
+  font-weight: 600;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
   position: relative;
   padding: 0.5rem 0;
   transition: color 0.3s ease;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
 }
 
 /* Modern hover animation (elegant centered thin underline) */
@@ -128,17 +77,17 @@
   content: '';
   position: absolute;
   width: 0;
-  height: 1px;
+  height: 2px;
   bottom: -2px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--color-savoy);
   transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .navbar-links a:hover,
 .navbar-links a.active {
-  color: #ffffff;
+  color: var(--color-savoy);
 }
 
 .navbar-links a:hover::after,
@@ -146,9 +95,30 @@
   width: 100%;
 }
 
-.navbar-links a:focus-visible {
-  outline: 2px dashed #ffffff;
-  outline-offset: 4px;
+/* Call to Action Button */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.btn-primary {
+  background-color: var(--color-savoy);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(29, 78, 216, 0.3); /* Savoy Blue shadow */
+}
+
+.btn-primary:hover {
+  background-color: #1E40AF; /* Darker savoy blue for hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(29, 78, 216, 0.4);
+  color: var(--color-white);
 }
 
 /* Mobile Toggle */
@@ -156,14 +126,14 @@
   display: none;
   background: none;
   border: none;
-  color: var(--bg-white, #ffffff);
+  color: var(--color-midnight);
   cursor: pointer;
   padding: 0.5rem;
   transition: opacity 0.2s ease;
 }
 
 .navbar-toggle:focus-visible {
-  outline: 2px dashed #ffffff;
+  outline: 2px dashed var(--color-savoy);
 }
 
 .navbar-toggle:hover {
@@ -172,19 +142,16 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .navbar-logo-circle {
-    width: 40px;
+  .navbar-logo {
     height: 40px;
-    font-size: 1rem;
   }
   
-  .navbar-title {
-    font-size: 1.15rem;
+  .navbar.scrolled .navbar-logo {
+    height: 35px;
   }
   
-  .navbar-subtitle {
-    font-size: 0.55rem;
-    letter-spacing: 0.15em;
+  .navbar-actions {
+    display: none;
   }
 
   .navbar-links {
@@ -194,13 +161,11 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: rgba(15, 76, 129, 0.98);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--color-white);
     padding: 1.5rem;
     gap: 1.5rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-hover);
+    border-top: 1px solid var(--border-color);
   }
   
   .navbar-links.open {
@@ -208,12 +173,12 @@
   }
 
   .navbar-links a::after {
-    display: none; /* Disable underline effect on mobile */
+    display: none;
   }
 
   .navbar-links a:hover,
   .navbar-links a.active {
-    color: #ffffff;
+    color: var(--color-savoy);
     opacity: 1;
   }
 

@@ -20,18 +20,19 @@ export const Navbar = () => {
       <div className="container navbar-container">
         
         <a href="/" className="navbar-brand">
-          <div className="navbar-logo-circle">
-            <span>SG</span>
-          </div>
-          <div className="navbar-title-container">
-            <h1 className="navbar-title">Sakhi Grih Udyog</h1>
-            <span className="navbar-subtitle">Women Empowerment &bull; Patna, Bihar</span>
-          </div>
+          <img src="/assets/logo.png" alt="Sakhi Greh Udyog Logo" className="navbar-logo" />
         </a>
 
         <nav className={`navbar-links ${isOpen ? 'open' : ''}`}>
-          <a href="/" className="active" onClick={() => setIsOpen(false)}>Gallery</a>
+          <a href="#home" className="active" onClick={() => setIsOpen(false)}>होम</a>
+          <a href="#mission" onClick={() => setIsOpen(false)}>मिशन</a>
+          <a href="#gallery" onClick={() => setIsOpen(false)}>गैलरी</a>
+          <a href="#teams" onClick={() => setIsOpen(false)}>हमारी टीम</a>
         </nav>
+        
+        <div className="navbar-actions">
+          <a href="#contact" className="btn-primary" onClick={() => setIsOpen(false)}>संपर्क करें</a>
+        </div>
 
         <button 
           className="navbar-toggle" 

@@ -22,7 +22,7 @@ export default function GallerySection() {
   }, [selectedItem]);
 
   return (
-    <div className="gallery-section">
+    <div id="gallery" className="gallery-section">
       <div className="gallery-header">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -32,39 +32,37 @@ export default function GallerySection() {
         >
           <div className="gallery-title-wrapper">
             <span className="gallery-line" />
-            <span className="gallery-subtitle">Our Impact in Focus</span>
+            <span className="gallery-subtitle">हमारी झलकियां</span>
             <span className="gallery-line" />
           </div>
 
           <h2 className="gallery-title">
-            Empowering communities through <span>action & unity</span>
+            संगठन और कार्य से <span>सशक्तिकरण</span>
           </h2>
 
           <p className="gallery-description">
-            Every photograph represents a story of change. From rural
-            education to women's empowerment, discover the moments that
-            shape our mission and the lasting impact we create together
-            in Bihar.
+            हर तस्वीर बदलाव की एक कहानी है। सखियों के सशक्तिकरण से लेकर आत्मनिर्भरता तक, 
+            उन पलों को देखें जो हमारे मिशन को आकार देते हैं और हमारे समाज पर एक स्थायी प्रभाव डालते हैं।
           </p>
 
           <div className="gallery-stats">
             <div className="gallery-stat-item">
               <span className="gallery-stat-number">50+</span>
-              <span className="gallery-stat-label">Villages Reached</span>
+              <span className="gallery-stat-label">गाँव जुड़े</span>
             </div>
 
             <div className="gallery-stat-divider" />
 
             <div className="gallery-stat-item">
               <span className="gallery-stat-number">10k+</span>
-              <span className="gallery-stat-label">Lives Impacted</span>
+              <span className="gallery-stat-label">जीवन प्रभावित</span>
             </div>
 
             <div className="gallery-stat-divider" />
 
             <div className="gallery-stat-item">
               <span className="gallery-stat-number">200+</span>
-              <span className="gallery-stat-label">Women Employed</span>
+              <span className="gallery-stat-label">सखी रोज़गार</span>
             </div>
           </div>
         </motion.div>
@@ -81,6 +79,10 @@ export default function GallerySection() {
             isLightboxOpen={!!selectedItem}
           />
         </motion.div>
+      </div>
+
+      <div style={{ marginTop: '3rem', textAlign: 'center', position: 'relative', zIndex: 10 }}>
+        <button className="card-cta">पूरी गैलरी देखें</button>
       </div>
 
       <Lightbox

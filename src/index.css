@@ -1,27 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Color Palette - Premium NGO */
-  --primary-blue: #0F4C81;
-  --primary-blue-hover: #0a355c;
-  --secondary-blue: #2F80ED;
-  --secondary-blue-hover: #1e61c2;
-  --bg-white: #ffffff;
-  --bg-body: #FAFBFC;
-  --bg-light-blue: #f0f7ff;
-  --text-primary: #1F2937;
-  --text-secondary: #6B7280;
-  --border-color: #e5e7eb;
+  /* Color Palette - Updated Directive */
+  --color-midnight: #0F172A;
+  --color-savoy: #1D4ED8;
+  --color-whisper: #F8FAFC;
+  --color-morning: #E0F2FE;
+  --color-amber-accent: #F59E0B;
+  --color-white: #FFFFFF;
+  --color-ozone: #0EA5E9; /* Bright cyan/sky blue */
+  --color-twilight: #1E3A8A; /* Deep twilight blue */
+  
+  --bg-body: var(--color-whisper);
+  --text-primary: var(--color-midnight);
+  --text-secondary: var(--color-midnight); /* Using midnight for all text as per instructions */
+  --border-color: #E2E8F0;
   
   /* Typography */
-  --font-sans: 'Inter', 'Roboto', sans-serif;
-  --font-serif: 'Playfair Display', 'Cormorant Garamond', serif;
+  --font-sans: 'Mukta', 'Poppins', sans-serif;
+  --font-serif: 'Mukta', sans-serif; /* Moving away from Yatra One to keep it clean and modern */
   
   /* Spacing & Layout */
-  --border-radius: 8px;
-  --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.05);
-  --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
-  --max-width: 1200px;
+  --border-radius: 12px; /* Clean border radii */
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --max-width: 1280px;
 }
 
 * {
