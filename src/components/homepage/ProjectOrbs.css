@@ -1,0 +1,43 @@
+/* ProjectOrbs.css */
+.project-orbs-container {
+  position: absolute;
+  inset: 0; /* top: 0, right: 0, bottom: 0, left: 0 */
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background: transparent;
+}
+
+.project-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.6;
+  pointer-events: none;
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+}
+
+.project-orb-savoy {
+  background-color: var(--color-savoy, #1D4ED8);
+}
+
+.project-orb-morning {
+  background-color: var(--color-morning, #E0F2FE);
+}
+
+/* Ambient animations (scoped specifically for these orbs to avoid clashes) */
+@keyframes project-drift {
+  0% {
+    margin-left: 0; margin-top: 0;
+  }
+  33% {
+    margin-left: 40px; margin-top: -30px;
+  }
+  66% {
+    margin-left: -30px; margin-top: 50px;
+  }
+  100% {
+    margin-left: 0; margin-top: 0;
+  }
+}

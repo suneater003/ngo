@@ -2,7 +2,7 @@
 .gallery-section {
   width: 100%;
   background: transparent; /* Remove boxed background, use body bg */
-  padding: 6rem 1rem;
+  padding: 6rem 0;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -355,7 +355,7 @@
   justify-content: space-between;
   margin-bottom: 1rem;
   font-size: 0.875rem;
-  color: #666;
+  color: #334155; /* Darkened for better contrast */
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 500;
@@ -373,7 +373,7 @@
 }
 
 .lightbox-event {
-  color: #666;
+  color: #334155; /* Darkened for better contrast */
   font-size: 1.125rem;
   margin-bottom: 1.5rem;
 }

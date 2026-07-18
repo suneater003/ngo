@@ -40,9 +40,16 @@
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--color-white);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+.footer-contact h3 {
+  font-family: var(--font-serif);
+  color: var(--color-ozone);
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer-text {

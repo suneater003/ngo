@@ -20,12 +20,13 @@ export const Navbar = () => {
       <div className="container navbar-container">
         
         <a href="/" className="navbar-brand">
-          <img src="/assets/logo.png" alt="Sakhi Greh Udyog Logo" className="navbar-logo" />
+          <img src="/assets/logo.webp" alt="Sakhi Greh Udyog Logo" className="navbar-logo" decoding="async" />
         </a>
 
         <nav className={`navbar-links ${isOpen ? 'open' : ''}`}>
           <a href="#home" className="active" onClick={() => setIsOpen(false)}>होम</a>
           <a href="#mission" onClick={() => setIsOpen(false)}>मिशन</a>
+          <a href="#projects" onClick={() => setIsOpen(false)}>परियोजनाएं</a>
           <a href="#gallery" onClick={() => setIsOpen(false)}>गैलरी</a>
           <a href="#teams" onClick={() => setIsOpen(false)}>हमारी टीम</a>
         </nav>

@@ -68,6 +68,8 @@ export function Lightbox({ item, items, onClose, onNavigate }: LightboxProps) {
                 src={item.imageUrl}
                 alt={item.altText || item.title}
                 className="lightbox-image"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             

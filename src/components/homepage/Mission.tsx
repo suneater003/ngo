@@ -1,7 +1,10 @@
 import React from 'react';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
+import MandalaWatermark from './MandalaWatermark';
 import './Mission.css';
 
 const Mission: React.FC = () => {
+  const revealRef = useScrollReveal();
   const pillars = [
     {
       id: 1,
@@ -30,8 +33,9 @@ const Mission: React.FC = () => {
   ];
 
   return (
-    <section id="mission" className="mission-section">
-      <div className="mission-container">
+    <section id="mission" className="mission-section scroll-reveal" ref={revealRef as React.RefObject<HTMLDivElement>}>
+      <MandalaWatermark />
+      <div className="container mission-container">
         <div className="mission-header">
           <h2 className="mission-title">हमारा <span className="text-highlight">मिशन</span></h2>
           <p className="mission-subtitle">सखियों का उन्नतिकरण एवं सशक्तिकरण</p>
@@ -41,12 +45,14 @@ const Mission: React.FC = () => {
           {pillars.map((pillar) => (
             <div key={pillar.id} className="mission-card">
               <div className="card-image-wrapper">
-                <img src={pillar.image} alt={pillar.title} className="card-image" />
+                <img src={pillar.image} alt={pillar.title} className="card-image" loading="lazy" decoding="async" />
                 <div className="card-overlay"></div>
               </div>
               <div className="card-content">
-                <h3 className="card-title">{pillar.title}</h3>
-                <p className="card-description">{pillar.description}</p>
+                <div className="card-text-wrapper">
+                  <h3 className="card-title">{pillar.title}</h3>
+                  <p className="card-description">{pillar.description}</p>
+                </div>
                 <button className="card-cta">और जानें</button>
               </div>
             </div>

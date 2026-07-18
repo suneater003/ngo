@@ -61,7 +61,7 @@ export const VideoCard = ({ video, isActive, offset, onClick }: VideoCardProps) 
       }}
     >
       <div className="video-card-inner">
-        <img src={video.thumbnailUrl} alt={video.title} className="video-thumbnail" />
+        <img src={video.thumbnailUrl} alt={video.title} className="video-thumbnail" loading="lazy" decoding="async" />
         <div className="video-duration">03:45</div>
         <div className="video-overlay">
           <div className="video-play-btn">

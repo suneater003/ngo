@@ -6,7 +6,7 @@
   align-items: center;
   overflow: hidden;
   background-color: var(--color-whisper);
-  padding: 4rem 0;
+  padding: 6rem 0;
 }
 
 .hero-section::before {

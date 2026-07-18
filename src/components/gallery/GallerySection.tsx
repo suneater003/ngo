@@ -4,11 +4,13 @@ import { usePointerInteraction } from './hooks/usePointerInteraction';
 import { InfiniteCarousel } from './InfiniteCarousel';
 import { Lightbox } from './Lightbox';
 import { galleryItems, type GalleryItem } from './galleryData';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Gallery.css';
 
 export default function GallerySection() {
   const { rotateX, rotateY } = usePointerInteraction();
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
+  const revealRef = useScrollReveal();
 
   const handleCardClick = (item: GalleryItem) => {
     console.log("Gallery received:", item);
@@ -22,7 +24,7 @@ export default function GallerySection() {
   }, [selectedItem]);
 
   return (
-    <div id="gallery" className="gallery-section">
+    <div id="gallery" className="gallery-section scroll-reveal" ref={revealRef as React.RefObject<HTMLDivElement>}>
       <div className="gallery-header">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

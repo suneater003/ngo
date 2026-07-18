@@ -1,0 +1,51 @@
+/* BackgroundOrbs.css */
+.background-orbs-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none; /* Crucial: Do not block interactions */
+  overflow: hidden;
+  background: transparent;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px); /* Diffused glow */
+  opacity: 0.6;
+  pointer-events: none;
+  /* use transform transitions for smooth mouse repulsion */
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+}
+
+/* Ambient animations */
+@keyframes drift {
+  0% {
+    margin-left: 0; margin-top: 0;
+  }
+  33% {
+    margin-left: 30px; margin-top: -50px;
+  }
+  66% {
+    margin-left: -20px; margin-top: 40px;
+  }
+  100% {
+    margin-left: 0; margin-top: 0;
+  }
+}
+
+.orb-white {
+  background-color: #FFFFFF;
+}
+
+.orb-sky {
+  background-color: var(--color-morning, #E0F2FE);
+}
+
+.orb-amber {
+  background-color: var(--color-amber-accent, #F59E0B);
+}

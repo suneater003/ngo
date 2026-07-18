@@ -1,13 +1,16 @@
 import React from 'react';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Hero.css';
 
 export const Hero = () => {
+  const revealRef = useScrollReveal();
+
   return (
-    <section className="hero-section" id="home">
+    <section className="hero-section scroll-reveal" id="home" ref={revealRef as React.RefObject<HTMLDivElement>}>
       <div className="container hero-container">
         
         <div className="hero-content">
-          <img src="/assets/logo.png" alt="" aria-hidden="true" className="hero-watermark" />
+          <img src="/assets/logo.webp" alt="" aria-hidden="true" className="hero-watermark" decoding="async" />
           
           <div className="hero-text-block">
             <h1 className="hero-title">
@@ -26,13 +29,13 @@ export const Hero = () => {
         <div className="hero-visuals">
           <div className="visual-composition">
             <div className="image-mask mask-1">
-              <img src="/assets/image copy 2.png" alt="Empowered Women" />
+              <img src="/assets/image copy 2.png" alt="Empowered Women" decoding="async" />
             </div>
             <div className="image-mask mask-2">
-              <img src="/assets/image copy 3.png" alt="Community Support" />
+              <img src="/assets/image copy 3.png" alt="Community Support" decoding="async" />
             </div>
             <div className="image-mask mask-3">
-              <img src="/assets/image copy 4.png" alt="Education" />
+              <img src="/assets/image copy 4.png" alt="Education" decoding="async" />
             </div>
             
             {/* Decorative elements */}

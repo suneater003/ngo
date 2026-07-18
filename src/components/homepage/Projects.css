@@ -1,8 +1,9 @@
 /* Projects Section - Blue/Warm Polish */
 .projects-section {
-  padding: 6rem 5%;
+  padding: 6rem 0;
   background-color: var(--color-whisper); /* Off-white background */
   position: relative;
+  overflow: hidden;
 }
 
 .projects-container {
@@ -38,17 +39,18 @@
 /* Project Card */
 .project-card {
   background-color: var(--color-white);
-  border-radius: 20px;
+  border-radius: var(--radius-soft);
   overflow: hidden;
-  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.05); /* Exact soft shadow requested */
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .project-card:hover {
-  transform: translateY(-5px); /* Hover elevation */
-  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
+  transform: translateY(-8px); /* Soft modern elevation */
+  box-shadow: 0 30px 60px -15px rgba(29, 78, 216, 0.12);
 }
 
 /* Card Image */
@@ -92,6 +94,10 @@
   flex-grow: 1;
 }
 
+.card-text-wrapper {
+  flex-grow: 1;
+}
+
 .project-card-title {
   font-family: var(--font-serif);
   font-size: 1.6rem;
@@ -103,14 +109,13 @@
 .project-card-description {
   font-size: 1.05rem;
   color: var(--color-midnight); /* Dark gray/navy description */
-  line-height: 1.6;
   margin-bottom: 2rem;
-  flex-grow: 1;
   opacity: 0.85;
 }
 
 /* Pill-shaped CTA Button */
 .project-card-cta {
+  margin-top: auto;
   align-self: flex-start;
   background-color: var(--color-savoy);
   color: var(--color-white);

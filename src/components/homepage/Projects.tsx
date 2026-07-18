@@ -1,7 +1,10 @@
 import React from 'react';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { ProjectOrbs } from './ProjectOrbs';
 import './Projects.css';
 
 const Projects: React.FC = () => {
+  const revealRef = useScrollReveal();
   const projects = [
     {
       id: 1,
@@ -24,7 +27,8 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="projects-section">
+    <section id="projects" className="projects-section scroll-reveal" ref={revealRef as React.RefObject<HTMLDivElement>}>
+      <ProjectOrbs />
       <div className="projects-container">
         <div className="projects-header">
           <h2 className="projects-title">हमारी <span className="text-highlight">परियोजनाएं</span></h2>
@@ -35,13 +39,15 @@ const Projects: React.FC = () => {
           {projects.map((project) => (
             <div key={project.id} className="project-card">
               <div className="project-image-wrapper">
-                <img src={project.image} alt={project.title} className="project-image" />
+                <img src={project.image} alt={project.title} className="project-image" loading="lazy" decoding="async" />
                 <div className="project-overlay"></div>
               </div>
               <div className="project-content">
-                <h3 className="project-card-title">{project.title}</h3>
-                <p className="project-card-description">{project.description}</p>
-                <button className="project-card-cta">विस्तार से पढ़ें</button>
+                <div className="card-text-wrapper">
+                  <h3 className="project-card-title">{project.title}</h3>
+                  <p className="project-card-description">{project.description}</p>
+                </div>
+                <button className="project-card-cta card-cta">विस्तार से पढ़ें</button>
               </div>
             </div>
           ))}

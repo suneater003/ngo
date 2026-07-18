@@ -24,6 +24,7 @@ export function GalleryCard({ item, onClick }: GalleryCardProps) {
         src={item.imageUrl}
         alt={item.altText || item.title}
         loading="lazy"
+        decoding="async"
         className="gallery-card-img"
       />
       

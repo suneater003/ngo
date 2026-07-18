@@ -1,8 +1,46 @@
 /* Teams Section - Blue/Warm Polish */
 .teams-section {
-  padding: 6rem 5%;
-  background-color: var(--color-morning); /* Alternating background */
   position: relative;
+  overflow: hidden;
+  background-color: var(--color-morning);
+  z-index: 1;
+  isolation: isolate;
+  padding: 6rem 0;
+}
+
+.team-content-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+/* Glassmorphic Ambient Glows */
+.glass-glow {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(150px);
+  transform: translateZ(0); /* Hardware acceleration for blur performance */
+}
+
+.glow-primary {
+  background-color: var(--color-savoy);
+  width: 800px;
+  height: 800px;
+  top: -20%;
+  left: -15%;
+  opacity: 0.45;
+  mix-blend-mode: multiply;
+}
+
+.glow-accent {
+  background-color: var(--color-amber-accent);
+  width: 600px;
+  height: 600px;
+  bottom: -20%;
+  right: -10%;
+  opacity: 0.55;
+  mix-blend-mode: color-burn;
 }
 
 .teams-container {
@@ -28,11 +66,23 @@
   opacity: 0.8;
 }
 
-/* 4-Column Grid for Teams */
+/* Two-Card Layout for Teams */
 .teams-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Ensure cards don't grow excessively large */
+.teams-grid .team-card {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.teams-action-wrapper {
+  margin-top: 4rem;
+  text-align: center;
 }
 
 /* Team Card */
@@ -99,15 +149,10 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .teams-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
   .teams-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
   }
   .teams-title {
     font-size: 2.75rem;
