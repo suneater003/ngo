@@ -154,8 +154,12 @@
     display: none;
   }
 
-  .navbar-links {
+  .desktop-only {
     display: none;
+  }
+
+  .mobile-menu {
+    display: flex;
     flex-direction: column;
     position: absolute;
     top: 100%;
@@ -166,10 +170,7 @@
     gap: 1.5rem;
     box-shadow: var(--shadow-hover);
     border-top: 1px solid var(--border-color);
-  }
-  
-  .navbar-links.open {
-    display: flex;
+    overflow: hidden;
   }
 
   .navbar-links a::after {
@@ -180,6 +181,16 @@
   .navbar-links a.active {
     color: var(--color-savoy);
     opacity: 1;
+  }
+  
+  .mobile-contact {
+    display: inline-block;
+    background-color: var(--color-savoy);
+    color: white !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 0.5rem;
   }
 
   .navbar-toggle {

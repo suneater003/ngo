@@ -1,10 +1,10 @@
 import React from 'react';
-import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { motion } from 'framer-motion';
+import { staggerContainer, cardFadeUp } from '../../utils/animations';
 import MandalaWatermark from './MandalaWatermark';
 import './Mission.css';
 
 const Mission: React.FC = () => {
-  const revealRef = useScrollReveal();
   const pillars = [
     {
       id: 1,
@@ -33,17 +33,29 @@ const Mission: React.FC = () => {
   ];
 
   return (
-    <section id="mission" className="mission-section scroll-reveal" ref={revealRef as React.RefObject<HTMLDivElement>}>
+    <section id="mission" className="mission-section">
       <MandalaWatermark />
       <div className="container mission-container">
-        <div className="mission-header">
+        <motion.div 
+          className="mission-header"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
           <h2 className="mission-title">हमारा <span className="text-highlight">मिशन</span></h2>
           <p className="mission-subtitle">सखियों का उन्नतिकरण एवं सशक्तिकरण</p>
-        </div>
+        </motion.div>
         
-        <div className="mission-grid">
+        <motion.div 
+          className="mission-grid"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {pillars.map((pillar) => (
-            <div key={pillar.id} className="mission-card">
+            <motion.div key={pillar.id} className="mission-card" variants={cardFadeUp}>
               <div className="card-image-wrapper">
                 <img src={pillar.image} alt={pillar.title} className="card-image" loading="lazy" decoding="async" />
                 <div className="card-overlay"></div>
@@ -55,9 +67,9 @@ const Mission: React.FC = () => {
                 </div>
                 <button className="card-cta">और जानें</button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

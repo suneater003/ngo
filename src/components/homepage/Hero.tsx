@@ -1,32 +1,47 @@
-import React from 'react';
-import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { motion } from 'framer-motion';
+import { staggerContainer, heroFadeUp, hoverLift } from '../../utils/animations';
 import './Hero.css';
 
 export const Hero = () => {
-  const revealRef = useScrollReveal();
-
   return (
-    <section className="hero-section scroll-reveal" id="home" ref={revealRef as React.RefObject<HTMLDivElement>}>
+    <section className="hero-section" id="home">
       <div className="container hero-container">
         
-        <div className="hero-content">
-          <img src="/assets/logo.webp" alt="" aria-hidden="true" className="hero-watermark" decoding="async" />
+        <motion.div 
+          className="hero-content"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          <img src="/assets/logo.png" alt="" aria-hidden="true" className="hero-watermark" decoding="async" />
           
           <div className="hero-text-block">
-            <h1 className="hero-title">
+            <motion.h1 variants={heroFadeUp} className="hero-title">
               आत्मनिर्भर सखि,<br />
               <span className="text-highlight">आत्मनिर्भर भारत</span>
-            </h1>
-            <p className="hero-description">
+            </motion.h1>
+            <motion.p variants={heroFadeUp} className="hero-description">
               सखी गृह उद्योग फाउंडेशन का मुख्य उद्देश्य सभी सखियों को एक सूत्र में पिरोना एवं मज़बूत संगठन के लिए आपस में व्यापार करना है।
-            </p>
-            <div className="hero-actions">
-              <a href="#mission" className="btn-primary">हमारा मिशन जानें</a>
-            </div>
+            </motion.p>
+            <motion.div variants={heroFadeUp} className="hero-actions">
+              <motion.a 
+                href="#mission" 
+                className="btn-primary"
+                whileHover={hoverLift.hover}
+                whileTap={hoverLift.tap}
+              >
+                हमारा मिशन जानें
+              </motion.a>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="hero-visuals">
+        <motion.div 
+          className="hero-visuals"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+        >
           <div className="visual-composition">
             <div className="image-mask mask-1">
               <img src="/assets/image copy 2.png" alt="Empowered Women" decoding="async" />
@@ -45,9 +60,10 @@ export const Hero = () => {
             <div className="decor-dot dot-3"></div>
             <div className="decor-shape"></div>
           </div>
-        </div>
+        </motion.div>
         
       </div>
     </section>
   );
 };
+

@@ -48,16 +48,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Global Scroll Reveal Utilities */
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+/* Accessibility & Focus Rings */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-savoy);
+  color: white;
+  padding: 8px;
+  z-index: 9999;
+  transition: top 0.2s;
 }
 
-.scroll-reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+.skip-link:focus {
+  top: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ozone);
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 h1, h2, h3, h4, h5, h6 {
