@@ -1,23 +1,13 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { leaders, MemberModal, type Member } from '../../pages/TeamPage';
 import { staggerContainer, cardFadeUp, hoverLift } from '../../utils/animations';
 import './Teams.css';
 
 const Teams: React.FC = () => {
-  const teamMembers = [
-    {
-      id: 1,
-      name: "सखी १",
-      role: "संस्थापक",
-      image: "/assets/image.png"
-    },
-    {
-      id: 2,
-      name: "सखी २",
-      role: "सह-संस्थापक",
-      image: "/assets/image copy.png"
-    }
-  ];
+  const [active, setActive] = useState<Member | null>(null);
 
   return (
     <section id="team" className="teams-section">
@@ -46,14 +36,21 @@ const Teams: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {teamMembers.map((member) => (
-              <motion.div key={member.id} className="team-card" variants={cardFadeUp}>
+            {leaders.map((member) => (
+              <motion.div 
+                key={member.name} 
+                className="team-card" 
+                variants={cardFadeUp}
+                onClick={() => setActive(member)}
+                style={{ cursor: 'pointer' }}
+              >
                 <div className="team-avatar-wrapper">
-                  <img src={member.image} alt={member.name} className="team-avatar" loading="lazy" decoding="async" />
+                  <img src={member.img} alt={member.name} className="team-avatar" loading="lazy" decoding="async" />
                 </div>
                 <div className="team-info">
                   <h3 className="team-name">{member.name}</h3>
                   <p className="team-role">{member.role}</p>
+                  <p className="team-mission" style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: '#64748B' }}>{member.mission}</p>
                 </div>
               </motion.div>
             ))}
@@ -66,17 +63,29 @@ const Teams: React.FC = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            <motion.a 
-              href="/team" 
-              className="btn-primary"
+            <motion.div
               whileHover={hoverLift.hover}
               whileTap={hoverLift.tap}
+              style={{ display: 'inline-block' }}
             >
-              पूरी टीम देखें
-            </motion.a>
+              <Link 
+                to="/team" 
+                className="btn-primary"
+                style={{ display: 'inline-block' }}
+              >
+                पूरी टीम देखें
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </div>
+
+      {createPortal(
+        <AnimatePresence>
+          {active && <MemberModal m={active} onClose={() => setActive(null)} />}
+        </AnimatePresence>,
+        document.body
+      )}
     </section>
   );
 };

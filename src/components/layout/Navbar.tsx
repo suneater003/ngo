@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { hoverLift } from '../../utils/animations';
 import './Navbar.css';
@@ -7,6 +8,14 @@ import './Navbar.css';
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  const isActive = (path: string, hash?: string) => {
+    if (hash) {
+      return location.pathname === path && location.hash === hash;
+    }
+    return location.pathname === path && !location.hash;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,17 +30,17 @@ export const Navbar = () => {
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
         
-        <a href="/" className="navbar-brand" aria-label="Home">
+        <Link to="/" className="navbar-brand" aria-label="Home">
           <img src="/assets/logo.png" alt="Sakhi Greh Udyog Logo" className="navbar-logo" decoding="async" />
-        </a>
+        </Link>
 
         {/* Desktop Links */}
         <nav className="navbar-links desktop-only" aria-label="Main Navigation">
-          <a href="#home" className="active">होम</a>
-          <a href="#mission">मिशन</a>
-          <a href="#projects">परियोजनाएं</a>
-          <a href="#gallery">गैलरी</a>
-          <a href="#teams">हमारी टीम</a>
+          <Link to="/" className={isActive('/', '') ? 'active' : ''}>होम</Link>
+          <Link to="/mission" className={isActive('/mission') ? 'active' : ''}>मिशन</Link>
+          <Link to="/#projects" className={isActive('/', '#projects') ? 'active' : ''}>परियोजनाएं</Link>
+          <Link to="/gallery" className={isActive('/gallery') ? 'active' : ''}>गैलरी</Link>
+          <Link to="/team" className={isActive('/team') ? 'active' : ''}>हमारी टीम</Link>
         </nav>
         
         <div className="navbar-actions">
@@ -67,12 +76,12 @@ export const Navbar = () => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            <a href="#home" className="active" onClick={() => setIsOpen(false)}>होम</a>
-            <a href="#mission" onClick={() => setIsOpen(false)}>मिशन</a>
-            <a href="#projects" onClick={() => setIsOpen(false)}>परियोजनाएं</a>
-            <a href="#gallery" onClick={() => setIsOpen(false)}>गैलरी</a>
-            <a href="#teams" onClick={() => setIsOpen(false)}>हमारी टीम</a>
-            <a href="#contact" className="mobile-contact" onClick={() => setIsOpen(false)}>संपर्क करें</a>
+            <Link to="/" className={isActive('/', '') ? 'active' : ''} onClick={() => setIsOpen(false)}>होम</Link>
+            <Link to="/mission" className={isActive('/mission') ? 'active' : ''} onClick={() => setIsOpen(false)}>मिशन</Link>
+            <Link to="/#projects" className={isActive('/', '#projects') ? 'active' : ''} onClick={() => setIsOpen(false)}>परियोजनाएं</Link>
+            <Link to="/gallery" className={isActive('/gallery') ? 'active' : ''} onClick={() => setIsOpen(false)}>गैलरी</Link>
+            <Link to="/team" className={isActive('/team') ? 'active' : ''} onClick={() => setIsOpen(false)}>हमारी टीम</Link>
+            <a href="/#contact" className="mobile-contact" onClick={() => setIsOpen(false)}>संपर्क करें</a>
           </motion.nav>
         )}
       </AnimatePresence>

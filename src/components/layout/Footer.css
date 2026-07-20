@@ -2,6 +2,8 @@
   background-color: var(--color-midnight); /* Deep midnight background */
   color: var(--color-whisper); /* Off-white text */
   padding: 2rem 0 0 0; /* Removed L/R padding so bottom panel spans full width, heavily reduced top padding */
+  position: relative;
+  z-index: 10;
 }
 
 .footer-container {

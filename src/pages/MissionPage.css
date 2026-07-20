@@ -1,0 +1,212 @@
+.mission-page {
+  padding-top: 100px; /* Account for navbar */
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.mission-hero {
+  position: relative;
+  text-align: center;
+  padding: 4rem 1rem;
+  background: url('https://images.unsplash.com/photo-1593113589914-075990141ce7?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mission-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-midnight, #0f172a);
+  opacity: 0.85;
+  z-index: 1;
+}
+
+.mission-hero .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.mission-hero .hero-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  color: var(--color-white, #ffffff);
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.mission-hero .hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--color-white, #ffffff);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.mission-hero .hero-title .text-highlight {
+  color: #38bdf8;
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.8), 0 0 40px rgba(56, 189, 248, 0.4);
+  text-decoration: none;
+}
+
+.mission-hero .hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Overview Section */
+.mission-overview {
+  padding: 6rem 1rem;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
+  backdrop-filter: blur(8px);
+}
+
+.vision-manifesto {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--color-whisper, #f8fafc);
+  padding: 3rem;
+  border-left: 6px solid var(--color-savoy, #4f46e5);
+  border-radius: 0 1rem 1rem 0;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #334155;
+  text-align: left;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+/* Mission Blocks */
+.mission-blocks {
+  padding: 4rem 1rem 6rem;
+  background-color: var(--color-white);
+}
+
+.mission-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-bottom: 8rem;
+  align-items: center;
+}
+
+.mission-row:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 1024px) {
+  .mission-row {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 6rem;
+  }
+  
+  .mission-row-reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .mission-row .mission-image-container,
+  .mission-row .mission-content {
+    flex: 1;
+    width: 50%;
+  }
+}
+
+.mission-image-container {
+  width: 100%;
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+}
+
+.mission-image-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.2) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.mission-image {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.mission-content {
+  width: 100%;
+}
+
+.mission-icon-wrapper {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary, #2563eb);
+  margin-bottom: 1.5rem;
+}
+
+/* Custom Neon and Teal Mission Orbs */
+.mission-orbs-wrapper .background-orbs-container {
+  position: fixed !important;
+  z-index: -1 !important;
+  opacity: 0.8;
+}
+
+.mission-orbs-wrapper .orb-amber {
+  background-color: #2dd4bf !important; /* Teal */
+}
+
+.mission-orbs-wrapper .orb-sky {
+  background-color: #38bdf8 !important; /* Light blue/teal */
+}
+
+.mission-orbs-wrapper .orb-white {
+  background-color: #4e26d3 !important; /* Neon purple/pink */
+}
+
+.mission-label {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.mission-title {
+  font-size: 2.25rem;
+  color: var(--color-dark);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.mission-description {
+  font-size: 1.125rem;
+  color: var(--color-gray);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.mission-description:last-child {
+  margin-bottom: 0;
+}

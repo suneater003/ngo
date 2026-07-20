@@ -17,7 +17,7 @@ export const Hero = () => {
           
           <div className="hero-text-block">
             <motion.h1 variants={heroFadeUp} className="hero-title">
-              आत्मनिर्भर सखि,<br />
+              आत्मनिर्भर सखी,<br />
               <span className="text-highlight">आत्मनिर्भर भारत</span>
             </motion.h1>
             <motion.p variants={heroFadeUp} className="hero-description">
@@ -25,7 +25,7 @@ export const Hero = () => {
             </motion.p>
             <motion.div variants={heroFadeUp} className="hero-actions">
               <motion.a 
-                href="#mission" 
+                href="/#mission" 
                 className="btn-primary"
                 whileHover={hoverLift.hover}
                 whileTap={hoverLift.tap}

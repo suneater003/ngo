@@ -10,7 +10,11 @@ interface OrbProps {
   animationDuration: number;
 }
 
-export const BackgroundOrbs: React.FC = () => {
+interface BackgroundOrbsProps {
+  count?: number;
+}
+
+export const BackgroundOrbs: React.FC<BackgroundOrbsProps> = ({ count = 15 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [orbs, setOrbs] = useState<OrbProps[]>([]);
   
@@ -20,7 +24,7 @@ export const BackgroundOrbs: React.FC = () => {
 
   useEffect(() => {
     // Generate static random orbs on mount
-    const numOrbs = 15; // Number of orbs
+    const numOrbs = count; // Number of orbs
     const types: ('white' | 'sky' | 'amber')[] = ['white', 'sky', 'amber'];
     const generatedOrbs: OrbProps[] = [];
 
