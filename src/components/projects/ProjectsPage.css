@@ -1,0 +1,215 @@
+.projects-page {
+  padding-top: 80px; /* Offset for navbar */
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  
+  background-color: #f8fafc; 
+
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(46, 92, 224, 0.14) 0%, transparent 50%),
+    radial-gradient(circle at 90% 30%, rgba(46, 92, 224, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 90%, rgba(46, 92, 224, 0.12) 0%, transparent 60%);
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.projects-hero {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.projects-hero-slogan {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #475569;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.projects-hero-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-savoy);
+  margin-top: 1rem;
+}
+
+.projects-hero-title {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: var(--color-midnight);
+}
+
+.projects-hero-title .highlight {
+  color: var(--color-savoy);
+}
+
+.projects-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.project-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 70vh;
+  scroll-margin-top: 100px;
+  width: 100%;
+}
+
+.project-row-reverse {
+  /* Class remains for logic, flex handled via absolute positioning */
+}
+
+.project-image-container {
+  width: 100%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .project-image-container {
+    width: 60%;
+    position: absolute;
+    margin-bottom: 0;
+  }
+  
+  .project-row .project-image-container {
+    left: 0;
+  }
+  
+  .project-row-reverse .project-image-container {
+    right: 0;
+    left: auto;
+  }
+}
+
+.project-image-container:hover {
+  transform: scale(1.02);
+}
+
+.project-image-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 16/9;
+}
+
+.project-text-container {
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+  z-index: 10;
+  
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1.25rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) {
+  .project-text-container {
+    width: 60%;
+    padding: 3rem;
+    position: absolute;
+  }
+
+  .project-row .project-text-container {
+    right: 5%;
+  }
+
+  .project-row-reverse .project-text-container {
+    left: 5%;
+    right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-row {
+    margin-bottom: 8rem;
+    min-height: 500px;
+  }
+  .project-image-container {
+    height: 500px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+  }
+  .project-text-container {
+    width: 55%;
+    padding: 4rem;
+  }
+}
+
+/* Metric Grid */
+.metric-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .metric-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.metric-item {
+  background-color: var(--color-whisper);
+  border-left: 4px solid var(--color-savoy);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.metric-item-title {
+  font-weight: 700;
+  color: var(--color-midnight);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.metric-item-desc {
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.project-title {
+  font-size: 2rem;
+  color: var(--color-midnight);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.project-body {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.project-body p {
+  margin-bottom: 1rem;
+}

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Mail, Phone } from 'lucide-react';
-import { FaInstagram } from 'react-icons/fa6';
 import { motion, AnimatePresence } from 'framer-motion';
 import './TeamPage.css';
 
@@ -11,7 +10,6 @@ export type Member = {
   bio: string;
   phone: string;
   email: string;
-  instagram: string;
   img: string;
   bg: string;
   accent: string;
@@ -23,9 +21,8 @@ export const leaders: Member[] = [
     role: "उपाध्यक्ष ",
     mission: "शिक्षा से ही समाज का सच्चा उत्थान संभव है।",
     bio: "आज के परिवेश में महिलाओं की आर्थिक स्थिति को देखते हुए उनकी मजबूती प्रदान करने के लिए इस समूह का गठन किया गया है इस समूह में सभी महिलाएं एक साथ एकत्रित होकर बैठती हैं और अपने उन्नति के लिए विचार करते हैं और आगे की ओर अग्रसर होती है इसलिए इस सखी गृह उद्योग फाउंडेशन का गठन किया गया।",
-    phone: "+91 98100 12345",
-    email: "sanjeev@janseva.org",
-    instagram: "@sanjeev.janseva",
+    phone: "+91 9199075985",
+    email: "sanjeevnpathak@gmail.com",
     img: "/assets/leader-1.jpeg",
     bg: "var(--color-morning)",
     accent: "var(--color-savoy)",
@@ -35,9 +32,8 @@ export const leaders: Member[] = [
     role: "अध्यक्ष",
     mission: "हर संकट में सेवा ही सबसे बड़ा धर्म है।",
     bio: "हम महिलाएं कमजोर नहीं है परंतु एकत्रित नहीं होने की वजह से हम दबे हुए हैं इस दबाव से छुटकारा पाने के लिए सभी महिलाओं को एक सूत्र में रखने हेतु इस समूह का गठन किया गया है।",
-    phone: "+91 98200 22345",
+    phone: "+91 7324858874",
     email: "rita1401devi@gmail.com",
-    instagram: "@rita.janseva",
     img: "/assets/leader-2.jpeg",
     bg: "#dbeafe",
     accent: "#1e40af",
@@ -50,9 +46,8 @@ const members: Member[] = [
     role: "सखी सहयोग",
     mission: "ज़मीन पर उतर कर ही असली बदलाव संभव है।",
     bio: "मेरा मानना है कि हर महिला के अंदर एक सफल उद्यमी छिपी होती है। 'सखी सहयोग' के जरिए मेरी हमेशा यही कोशिश रहती है कि पैसों की कमी कभी भी किसी महिला के सपनों के आड़े न आए। मैं महिलाओं की छोटी बचतों को एक बड़ी ताकत में बदलने और उन्हें अपना लघु उद्योग शुरू करने के लिए आवश्यक आर्थिक सहयोग देने का काम करती हूँ। आइए, साथ मिलकर खुद को और समाज को सशक्त बनाएं।",
-    phone: "+91 97110 45678",
-    email: "arjun@janseva.org",
-    instagram: "@arjun.field",
+    phone: "+91 9608033768",
+    email: "radhikasingh098000@gmail.com",
     img: "/assets/team-1.jpeg",
     bg: "#fef3c7",
     accent: "#a16207",
@@ -64,7 +59,6 @@ const members: Member[] = [
     bio: "पाँच सौ से अधिक स्वयंसेवकों के नेटवर्क की देखरेख। प्रशिक्षण शिविर, कार्यशालाएँ और स्वयंसेवी अभियान संचालित करती हैं।",
     phone: "+91 73609 72174",
     email: "khusboo@janseva.org",
-    instagram: "@khusboo.volunteers",
     img: "/assets/team-2.jpeg",
     bg: "#fce7f3",
     accent: "#be185d",
@@ -73,10 +67,9 @@ const members: Member[] = [
     name: "श्रीमती जुली",
     role: "एकाउंटेंट",
     mission: "सही कहानी बदलाव का सबसे बड़ा हथियार है।",
-    bio: "मीडिया, प्रकाशन और डिजिटल अभियानों के प्रभारी। संस्था की वार्षिक रिपोर्ट और सामाजिक-मीडिया अभियानों का नेतृत्व करते हैं।",
+    bio: "दान, अनुदान और वित्तीय पारदर्शिता की देखरेख। CA-योग्य पेशेवर, जो हर रुपये का लेखा-जोखा जन-सुलभ बनाती हैं।",
     phone: "+91 81023 08890",
     email: "juli@janseva.org",
-    instagram: "@juli.stories",
     img: "/assets/team-3.jpeg",
     bg: "#d1fae5",
     accent: "#047857",
@@ -85,10 +78,9 @@ const members: Member[] = [
     name: "श्रीमती दिपा",
     role: "सखी व्यापार",
     mission: "पारदर्शिता ही जन-विश्वास की नींव है।",
-    bio: "दान, अनुदान और वित्तीय पारदर्शिता की देखरेख। CA-योग्य पेशेवर, जो हर रुपये का लेखा-जोखा जन-सुलभ बनाती हैं।",
-    phone: "+91 70043 00266",
-    email: "dipa@janseva.org",
-    instagram: "@dipa.finance",
+    bio: "मैं यह मानती हूं कि हर महिला के अंदर एक सफल उद्यमी छिपी होती है सखी व्यापार के जारी मेरी हमेशा यही कोशिश रहती है कि पैसों की कमी किसी महिला के सपनों के आड़े ना आए मैं महिलाओं की छोटा व्यापार को एक बड़ी ताकत में बदलकर लघु उद्योग शुरू करने के लिए आवश्यक लाभ देने का काम करती हूं आई मिलकर खुद को और समाज को सशक्त बनाएं।",
+    phone: "+91 7004300266",
+    email: "dk5842796@gmail.com",
     img: "/assets/team-4.jpeg",
     bg: "#ffe4e6",
     accent: "#9f1239",
@@ -100,10 +92,20 @@ const members: Member[] = [
     bio: "युवा नेतृत्व एवं कौशल विकास कार्यक्रमों के सह-संयोजक। कॉलेजों और स्कूलों में कार्यशालाएँ आयोजित करते हैं।",
     phone: "+91 93345 21267",
     email: "sima@janseva.org",
-    instagram: "@sima.youth",
     img: "/assets/team-5.jpeg",
     bg: "#cffafe",
     accent: "#155e75",
+  },
+  {
+    name: "श्रीमती प्रीति",
+    role: "सखी शिक्षा",
+    mission: "शिक्षा ही ज्ञान है जो महिला को शक्ति देता है।",
+    bio: "मैं यह मानती हूं कि हर महिला के अंदर एक सफल उद्यमी छिपी होती है सखी व्यापार के जारी मेरी हमेशा यही कोशिश रहती है कि पैसों की कमी किसी महिला के सपनों के आड़े ना आए मैं महिलाओं की छोटा व्यापार को एक बड़ी ताकत में बदलकर लघु उद्योग शुरू करने के लिए आवश्यक लाभ देने का काम करती हूं आई मिलकर खुद को और समाज को सशक्त बनाएं।",
+    phone: "+91 292255805",
+    email: "[EMAIL_ADDRESS]",
+    img: "/assets/team-6.jpeg",
+    bg: "#e7e4ffff",
+    accent: "#12319fff",
   },
 ];
 
@@ -200,10 +202,6 @@ export function MemberModal({ m, onClose }: { m: Member; onClose: () => void }) 
             <a href={`mailto:${m.email}`} className="team-contact-link">
               <Mail size={18} style={{ color: m.accent }} />
               <span>{m.email}</span>
-            </a>
-            <a href={`https://instagram.com/${m.instagram.replace("@", "")}`} target="_blank" rel="noreferrer" className="team-contact-link">
-              <FaInstagram size={18} style={{ color: m.accent }} />
-              <span>{m.instagram}</span>
             </a>
           </div>
         </div>

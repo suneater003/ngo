@@ -38,20 +38,21 @@ export const Navbar = () => {
         <nav className="navbar-links desktop-only" aria-label="Main Navigation">
           <Link to="/" className={isActive('/', '') ? 'active' : ''}>होम</Link>
           <Link to="/mission" className={isActive('/mission') ? 'active' : ''}>मिशन</Link>
-          <Link to="/#projects" className={isActive('/', '#projects') ? 'active' : ''}>परियोजनाएं</Link>
+          <Link to="/projects" className={isActive('/projects') ? 'active' : ''}>परियोजनाएं</Link>
           <Link to="/gallery" className={isActive('/gallery') ? 'active' : ''}>गैलरी</Link>
           <Link to="/team" className={isActive('/team') ? 'active' : ''}>हमारी टीम</Link>
         </nav>
         
         <div className="navbar-actions">
-          <motion.a 
-            href="#contact" 
-            className="btn-primary"
+          <motion.div 
             whileHover={hoverLift.hover}
             whileTap={hoverLift.tap}
+            style={{ display: 'inline-block' }}
           >
-            संपर्क करें
-          </motion.a>
+            <Link to="/contact" className="btn-primary">
+              संपर्क करें
+            </Link>
+          </motion.div>
         </div>
 
         <button 
@@ -78,10 +79,10 @@ export const Navbar = () => {
           >
             <Link to="/" className={isActive('/', '') ? 'active' : ''} onClick={() => setIsOpen(false)}>होम</Link>
             <Link to="/mission" className={isActive('/mission') ? 'active' : ''} onClick={() => setIsOpen(false)}>मिशन</Link>
-            <Link to="/#projects" className={isActive('/', '#projects') ? 'active' : ''} onClick={() => setIsOpen(false)}>परियोजनाएं</Link>
+            <Link to="/projects" className={isActive('/projects') ? 'active' : ''} onClick={() => setIsOpen(false)}>परियोजनाएं</Link>
             <Link to="/gallery" className={isActive('/gallery') ? 'active' : ''} onClick={() => setIsOpen(false)}>गैलरी</Link>
             <Link to="/team" className={isActive('/team') ? 'active' : ''} onClick={() => setIsOpen(false)}>हमारी टीम</Link>
-            <a href="/#contact" className="mobile-contact" onClick={() => setIsOpen(false)}>संपर्क करें</a>
+            <Link to="/contact" className="mobile-contact" onClick={() => setIsOpen(false)}>संपर्क करें</Link>
           </motion.nav>
         )}
       </AnimatePresence>

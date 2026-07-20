@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { staggerContainer, cardFadeUp } from '../../utils/animations';
 import { ProjectOrbs } from './ProjectOrbs';
@@ -8,21 +9,24 @@ const Projects: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: "सिलाई प्रशिक्षण केंद्र",
-      description: "सखियों को सिलाई का प्रशिक्षण देकर उन्हें आत्मनिर्भर और स्वावलंबी बनाने की एक प्रमुख पहल।",
-      image: "/assets/image copy 2.png"
+      title: "स्वास्थ्य जागरूकता अभियान",
+      description: "ओपीडी शुल्क माफ़ी, जाँच में विशेष छूट और 'सखी स्वास्थ्य कार्ड' के माध्यम से दीर्घकालिक चिकित्सा सहायता।",
+      image: "/assets/image copy 4.png",
+      linkTarget: "/projects#health"
     },
     {
       id: 2,
-      title: "हस्तशिल्प उत्पादन",
-      description: "स्थानीय कला और हस्तशिल्प को बढ़ावा देना, जिससे महिलाओं को घर बैठे रोज़गार मिल सके।",
-      image: "/assets/image copy 3.png"
+      title: "सखी व्यापार और उद्यमिता",
+      description: "कम पूंजी के साथ महिलाओं को उद्यमी बनाना। फाउंडेशन सही उत्पाद के चुनाव से लेकर उसे घर बैठे तैयार करने का संपूर्ण प्रशिक्षण प्रदान करता है।",
+      image: "/assets/image copy 2.png",
+      linkTarget: "/projects#vyapar"
     },
     {
       id: 3,
-      title: "स्वास्थ्य जागरूकता अभियान",
-      description: "गांव-गांव जाकर महिलाओं और बच्चों के स्वास्थ्य के प्रति जागरूकता फैलाना और चिकित्सा शिविर लगाना।",
-      image: "/assets/image copy 4.png"
+      title: "सखी सहयोग",
+      description: "महिलाओं की छोटी-छोटी बचतों को एक बड़ी ताकत में बदलते हैं। 'सबका सहयोग, सबका विकास' के मंत्र के साथ सूक्ष्म-वित्तीय ढांचा।",
+      image: "/assets/image copy 3.png",
+      linkTarget: "/projects#sahyog"
     }
   ];
 
@@ -59,7 +63,7 @@ const Projects: React.FC = () => {
                   <h3 className="project-card-title">{project.title}</h3>
                   <p className="project-card-description">{project.description}</p>
                 </div>
-                <button className="project-card-cta card-cta">विस्तार से पढ़ें</button>
+                <Link className="project-card-cta card-cta" to={project.linkTarget}>विस्तार से पढ़ें</Link>
               </div>
             </motion.div>
           ))}

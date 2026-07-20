@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { staggerContainer, cardFadeUp } from '../../utils/animations';
 import MandalaWatermark from './MandalaWatermark';
@@ -10,25 +11,29 @@ const Mission: React.FC = () => {
       id: 1,
       title: "सखि व्यापार",
       description: "सखियों को व्यापार करने के लिए प्रोत्साहित करना तथा उनका आर्थिक विकास करना।",
-      image: "/assets/image copy 2.png"
+      image: "/assets/image copy 2.png",
+      linkTarget: "/mission#empowerment"
     },
     {
       id: 2,
       title: "सखी सहयोग",
       description: "छोटी रकम जमा कर व्यापार करने के लिए सहयोग राशि प्रदान करना।",
-      image: "/assets/image copy 3.png"
+      image: "/assets/image copy 3.png",
+      linkTarget: "/mission#community"
     },
     {
       id: 3,
       title: "सखी शिक्षा",
       description: "कमजोर सखियों के बच्चों को शिक्षा प्रदान कर उन्हें आत्मनिर्भर बनाना।",
-      image: "/assets/image copy 4.png"
+      image: "/assets/image copy 4.png",
+      linkTarget: "/mission#education"
     },
     {
       id: 4,
       title: "सखी स्वास्थ्य",
       description: "सखियों को स्वास्थ्य के प्रति जागरूक करना और चिकित्सा सहायता प्रदान करना।",
-      image: "/assets/image.png"
+      image: "/assets/image.png",
+      linkTarget: "/mission#healthcare"
     }
   ];
 
@@ -65,7 +70,7 @@ const Mission: React.FC = () => {
                   <h3 className="card-title">{pillar.title}</h3>
                   <p className="card-description">{pillar.description}</p>
                 </div>
-                <button className="card-cta">और जानें</button>
+                <Link className="card-cta" to={pillar.linkTarget}>और जानें</Link>
               </div>
             </motion.div>
           ))}

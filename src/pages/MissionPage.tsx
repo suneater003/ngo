@@ -8,6 +8,7 @@ const MissionPage = () => {
   const missions = [
     {
       id: 1,
+      anchorId: "education",
       label: "Education",
       title: "शिक्षा और ज्ञान का प्रसार",
       paragraphs: [
@@ -19,6 +20,7 @@ const MissionPage = () => {
     },
     {
       id: 2,
+      anchorId: "empowerment",
       label: "Women Empowerment",
       title: "महिला सशक्तिकरण",
       paragraphs: [
@@ -30,6 +32,7 @@ const MissionPage = () => {
     },
     {
       id: 3,
+      anchorId: "healthcare",
       label: "Healthcare",
       title: "स्वास्थ्य एवं चिकित्सा सेवा",
       paragraphs: [
@@ -41,6 +44,7 @@ const MissionPage = () => {
     },
     {
       id: 4,
+      anchorId: "community",
       label: "Community",
       title: "सामुदायिक विकास",
       paragraphs: [
@@ -109,7 +113,9 @@ const MissionPage = () => {
             return (
               <div 
                 key={mission.id} 
+                id={mission.anchorId}
                 className={`mission-row ${isEven ? 'mission-row-reverse' : ''}`}
+                style={{ scrollMarginTop: '100px' }}
               >
                 <motion.div 
                   className="mission-image-container"

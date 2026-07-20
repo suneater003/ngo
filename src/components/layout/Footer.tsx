@@ -17,8 +17,8 @@ export const Footer = () => {
         <div className="footer-contact">
           <h4 className="footer-subtitle">संपर्क करें</h4>
           <p className="footer-text">पटना, बिहार, भारत</p>
-          <p className="footer-text">ईमेल: hello@sakhigrehudyog.org</p>
-          <p className="footer-text">फ़ोन: +91 98765 43210</p>
+          <p className="footer-text">ईमेल: sakhigirhudhyogfoundation@gmail.com</p>
+          <p className="footer-text">फ़ोन: +91 9199075985</p>
         </div>
 
       </div>

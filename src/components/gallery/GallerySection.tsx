@@ -48,12 +48,9 @@ export default function GallerySection() {
           </p>
 
           <div className="gallery-stats">
-            <div className="gallery-stat-item">
-              <span className="gallery-stat-number">50+</span>
-              <span className="gallery-stat-label">गाँव जुड़े</span>
-            </div>
+            
 
-            <div className="gallery-stat-divider" />
+            
 
             <div className="gallery-stat-item">
               <span className="gallery-stat-number">10k+</span>
@@ -63,7 +60,7 @@ export default function GallerySection() {
             <div className="gallery-stat-divider" />
 
             <div className="gallery-stat-item">
-              <span className="gallery-stat-number">200+</span>
+              <span className="gallery-stat-number">2000+</span>
               <span className="gallery-stat-label">सखी रोज़गार</span>
             </div>
           </div>
