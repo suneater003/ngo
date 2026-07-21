@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { usePointerInteraction } from './hooks/usePointerInteraction';
 import { InfiniteCarousel } from './InfiniteCarousel';
@@ -8,6 +9,7 @@ import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Gallery.css';
 
 export default function GallerySection() {
+  const navigate = useNavigate();
   const { rotateX, rotateY } = usePointerInteraction();
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
   const revealRef = useScrollReveal();
@@ -81,7 +83,7 @@ export default function GallerySection() {
       </div>
 
       <div style={{ marginTop: '3rem', textAlign: 'center', position: 'relative', zIndex: 10 }}>
-        <button className="card-cta">पूरी गैलरी देखें</button>
+        <button className="card-cta" onClick={() => navigate('/gallery')}>पूरी गैलरी देखें</button>
       </div>
 
       <Lightbox

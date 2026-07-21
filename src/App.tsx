@@ -10,6 +10,7 @@ const TeamPage = lazy(() => import('./pages/TeamPage'));
 const MissionPage = lazy(() => import('./pages/MissionPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const ProjectsPage = lazy(() => import('./components/projects/ProjectsPage'));
+const GalleryPage = lazy(() => import('./pages/GalleryPage'));
 const Footer = lazy(() => import('./components/layout/Footer').then(module => ({ default: module.Footer })));
 
 function App() {
@@ -43,6 +44,11 @@ function App() {
             <Route path="/projects" element={
               <Suspense fallback={<div className="section-loader" aria-live="polite">Loading...</div>}>
                 <ProjectsPage />
+              </Suspense>
+            } />
+            <Route path="/gallery" element={
+              <Suspense fallback={<div className="section-loader" aria-live="polite">Loading...</div>}>
+                <GalleryPage />
               </Suspense>
             } />
           </Routes>
