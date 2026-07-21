@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { videoData } from './videoData';
 import type { VideoItem } from './videoData';
@@ -9,6 +9,7 @@ export const VideoCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState<VideoItem | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const numItems = videoData.length;
 
@@ -16,9 +17,9 @@ export const VideoCarousel = () => {
     setActiveIndex((prev) => (prev + 1) % numItems);
   }, [numItems]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setActiveIndex((prev) => (prev - 1 + numItems) % numItems);
-  };
+  }, [numItems]);
 
   // Auto-rotate
   useEffect(() => {
@@ -27,6 +28,28 @@ export const VideoCarousel = () => {
     const interval = setInterval(nextSlide, 5000); // 5 seconds
     return () => clearInterval(interval);
   }, [isPaused, selectedVideo, nextSlide]);
+
+  // Wheel Navigation
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      if (selectedVideo) return; // Do not navigate while modal is open
+      
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (e.deltaY > 20 || e.deltaX > 20) {
+        nextSlide();
+      } else if (e.deltaY < -20 || e.deltaX < -20) {
+        prevSlide();
+      }
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    return () => container.removeEventListener('wheel', handleWheel);
+  }, [selectedVideo, nextSlide, prevSlide]);
 
   const handleCardClick = (index: number) => {
     if (index === activeIndex) {
@@ -42,6 +65,7 @@ export const VideoCarousel = () => {
     <>
       <div 
         className="video-carousel-container"
+        ref={containerRef}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
