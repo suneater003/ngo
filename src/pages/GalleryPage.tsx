@@ -4,6 +4,7 @@ import { BackgroundOrbs } from '../components/layout/BackgroundOrbs';
 import { InfiniteCarousel } from '../components/gallery/InfiniteCarousel';
 import { Lightbox } from '../components/gallery/Lightbox';
 import { galleryItems, type GalleryItem } from '../components/gallery/galleryData';
+import { VideoShowcase } from '../components/video/VideoShowcase';
 import { usePointerInteraction } from '../components/gallery/hooks/usePointerInteraction';
 import { heroFadeUp, staggerContainer } from '../utils/animations';
 import '../components/gallery/Gallery.css';
@@ -54,6 +55,8 @@ const GalleryPage: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
+      <VideoShowcase />
 
       <Lightbox
         item={selectedItem}

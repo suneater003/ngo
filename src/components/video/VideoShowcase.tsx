@@ -7,14 +7,14 @@ export const VideoShowcase = () => {
       <div className="video-header">
         <div className="video-title-wrapper">
           <span className="video-line" />
-          <span className="video-subtitle">Video Gallery</span>
+          <span className="video-subtitle">वीडियो गैलरी</span>
           <span className="video-line" />
         </div>
         <h2 className="video-title">
-          Watch our stories <span>unfold</span>
+          हमारी कहानियाँ <span>वीडियो में</span>
         </h2>
         <p className="video-description">
-          Discover our initiatives in motion through workshops, community stories, and moments of impact.
+          हमारी पहलों, गतिविधियों और समुदाय से जुड़े विशेष पलों को वीडियो के माध्यम से देखें
         </p>
       </div>
       

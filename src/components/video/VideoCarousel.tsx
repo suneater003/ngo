@@ -25,7 +25,7 @@ export const VideoCarousel = () => {
   useEffect(() => {
     if (isPaused || selectedVideo) return;
     
-    const interval = setInterval(nextSlide, 5000); // 5 seconds
+    const interval = setInterval(nextSlide, 1500); // 5 seconds
     return () => clearInterval(interval);
   }, [isPaused, selectedVideo, nextSlide]);
 

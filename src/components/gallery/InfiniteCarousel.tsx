@@ -50,7 +50,7 @@ export function InfiniteCarousel({ items, onCardClick, isLightboxOpen }: Infinit
     
     const interval = setInterval(() => {
       navigate(1);
-    }, 3500);
+    }, 1500);
     
     return () => clearInterval(interval);
   }, [isLightboxOpen, isHovered, navigate]);
