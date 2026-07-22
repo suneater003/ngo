@@ -11,21 +11,24 @@ const Projects: React.FC = () => {
       id: 1,
       title: "स्वास्थ्य जागरूकता अभियान",
       description: "ओपीडी शुल्क माफ़ी, जाँच में विशेष छूट और 'सखी स्वास्थ्य कार्ड' के माध्यम से दीर्घकालिक चिकित्सा सहायता।",
-      image: "/assets/image copy 4.png",
+      image: "/gallary/image/gallary-038.jpeg",
+      fallbackImage: "/assets/gallery/images/gallery-038.jpeg",
       linkTarget: "/projects#health"
     },
     {
       id: 2,
       title: "सखी व्यापार और उद्यमिता",
       description: "कम पूंजी के साथ महिलाओं को उद्यमी बनाना। फाउंडेशन सही उत्पाद के चुनाव से लेकर उसे घर बैठे तैयार करने का संपूर्ण प्रशिक्षण प्रदान करता है।",
-      image: "/assets/image copy 2.png",
+      image: "/gallary/image/gallary-011.jpg",
+      fallbackImage: "/assets/gallery/images/gallery-011.jpeg",
       linkTarget: "/projects#vyapar"
     },
     {
       id: 3,
       title: "सखी सहयोग",
       description: "महिलाओं की छोटी-छोटी बचतों को एक बड़ी ताकत में बदलते हैं। 'सबका सहयोग, सबका विकास' के मंत्र के साथ सूक्ष्म-वित्तीय ढांचा।",
-      image: "/assets/image copy 3.png",
+      image: "/gallary/image/gallary-012.jpg",
+      fallbackImage: "/assets/gallery/images/gallery-012.jpeg",
       linkTarget: "/projects#sahyog"
     }
   ];
@@ -55,7 +58,14 @@ const Projects: React.FC = () => {
           {projects.map((project) => (
             <motion.div key={project.id} className="project-card" variants={cardFadeUp}>
               <div className="project-image-wrapper">
-                <img src={project.image} alt={project.title} className="project-image" loading="lazy" decoding="async" />
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="project-image" 
+                  loading="lazy" 
+                  decoding="async" 
+                  onError={(e) => { e.currentTarget.src = project.fallbackImage; }}
+                />
                 <div className="project-overlay"></div>
               </div>
               <div className="project-content">

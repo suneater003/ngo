@@ -11,28 +11,32 @@ const Mission: React.FC = () => {
       id: 1,
       title: "सखि व्यापार",
       description: "सखियों को व्यापार करने के लिए प्रोत्साहित करना तथा उनका आर्थिक विकास करना।",
-      image: "/assets/image copy 2.png",
+      image: "/gallary/image/gallary-011.jpg",
+      fallbackImage: "/assets/gallery/images/gallery-011.jpeg",
       linkTarget: "/mission#empowerment"
     },
     {
       id: 2,
       title: "सखी सहयोग",
       description: "छोटी रकम जमा कर व्यापार करने के लिए सहयोग राशि प्रदान करना।",
-      image: "/assets/image copy 3.png",
+      image: "/gallary/image/gallary-012.jpg",
+      fallbackImage: "/assets/gallery/images/gallery-012.jpeg",
       linkTarget: "/mission#community"
     },
     {
       id: 3,
       title: "सखी शिक्षा",
       description: "कमजोर सखियों के बच्चों को शिक्षा प्रदान कर उन्हें आत्मनिर्भर बनाना।",
-      image: "/assets/image copy 4.png",
+      image: "/gallary/image/gallary-034.jpg",
+      fallbackImage: "/assets/gallery/images/gallery-034.jpeg",
       linkTarget: "/mission#education"
     },
     {
       id: 4,
       title: "सखी स्वास्थ्य",
       description: "सखियों को स्वास्थ्य के प्रति जागरूक करना और चिकित्सा सहायता प्रदान करना।",
-      image: "/assets/image.png",
+      image: "/gallary/image/gallary-038.jpeg",
+      fallbackImage: "/assets/gallery/images/gallery-038.jpeg",
       linkTarget: "/mission#healthcare"
     }
   ];
@@ -62,7 +66,14 @@ const Mission: React.FC = () => {
           {pillars.map((pillar) => (
             <motion.div key={pillar.id} className="mission-card" variants={cardFadeUp}>
               <div className="card-image-wrapper">
-                <img src={pillar.image} alt={pillar.title} className="card-image" loading="lazy" decoding="async" />
+                <img 
+                  src={pillar.image} 
+                  alt={pillar.title} 
+                  className="card-image" 
+                  loading="lazy" 
+                  decoding="async" 
+                  onError={(e) => { e.currentTarget.src = pillar.fallbackImage; }}
+                />
                 <div className="card-overlay"></div>
               </div>
               <div className="card-content">

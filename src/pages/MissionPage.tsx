@@ -15,7 +15,8 @@ const MissionPage = () => {
         "हम मानते हैं कि शिक्षा ही समाज में सच्चे और स्थायी बदलाव की कुंजी है। सखी गृह उद्योग फाउंडेशन ग्रामीण और पिछड़े क्षेत्रों में बच्चों और युवाओं को गुणवत्तापूर्ण शिक्षा प्रदान करने के लिए प्रतिबद्ध है।",
         "हमारा लक्ष्य है कि कोई भी बच्चा आर्थिक तंगी के कारण शिक्षा से वंचित न रहे। हम विभिन्न शैक्षणिक कार्यक्रम, छात्रवृत्ति और कौशल विकास कार्यशालाएं आयोजित करते हैं।"
       ],
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop",
+      image: "/gallary/image/gallary-034.jpg",
+      fallbackImage: "/assets/gallery/images/gallery-034.jpeg",
       icon: <FaGraduationCap size={24} />
     },
     {
@@ -27,7 +28,8 @@ const MissionPage = () => {
         "महिलाओं की आर्थिक और सामाजिक स्वतंत्रता हमारे संगठन का मुख्य स्तंभ है। हम महिलाओं को स्वरोजगार और कौशल विकास के अवसर प्रदान करके उन्हें आत्मनिर्भर बनाने की दिशा में काम करते हैं।",
         "सिलाई, कढ़ाई, और लघु उद्योग प्रशिक्षण के माध्यम से हम हज़ारों महिलाओं को स्वावलंबी बना चुके हैं। जब एक महिला सशक्त होती है, तो पूरा परिवार और समाज सशक्त होता है।"
       ],
-      image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&auto=format&fit=crop",
+      image: "/gallary/image/gallary-011.jpg",
+      fallbackImage: "/assets/gallery/images/gallery-011.jpeg",
       icon: <FaFemale size={24} />
     },
     {
@@ -39,7 +41,8 @@ const MissionPage = () => {
         "स्वस्थ नागरिक ही एक स्वस्थ राष्ट्र का निर्माण कर सकते हैं। हम वंचित समुदायों तक बुनियादी चिकित्सा सुविधाएं और स्वास्थ्य जागरूकता पहुंचाने के लिए निरंतर प्रयासरत हैं।",
         "निःशुल्क चिकित्सा शिविर, दवा वितरण, और मातृ-शिशु स्वास्थ्य कार्यक्रमों के माध्यम से हमारा उद्देश्य समाज के अंतिम छोर तक स्वास्थ्य सेवाएं सुनिश्चित करना है।"
       ],
-      image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1200&auto=format&fit=crop",
+      image: "/gallary/image/gallary-038.jpeg",
+      fallbackImage: "/assets/gallery/images/gallery-038.jpeg",
       icon: <FaHeartbeat size={24} />
     },
     {
@@ -48,10 +51,11 @@ const MissionPage = () => {
       label: "Community",
       title: "सामुदायिक विकास",
       paragraphs: [
-        "सच्चा विकास तभी संभव है যখন पूरा समुदाय एक साथ आगे बढ़े। हम स्थानीय लोगों के साथ मिलकर पर्यावरण संरक्षण, स्वच्छता अभियान, और जल संरक्षण जैसे महत्वपूर्ण मुद्दों पर काम करते हैं।",
+        "सच्चा विकास तभी संभव है जब पूरा समुदाय एक साथ आगे बढ़े। हम स्थानीय लोगों के साथ मिलकर पर्यावरण संरक्षण, स्वच्छता अभियान, और जल संरक्षण जैसे महत्वपूर्ण मुद्दों पर काम करते हैं।",
         "हमारा प्रयास है कि हम एक ऐसा समाज बनाएं जो न केवल आज की ज़रूरतों को पूरा करे, बल्कि आने वाली पीढ़ियों के लिए भी एक बेहतर और सुरक्षित भविष्य सुनिश्चित करे।"
       ],
-      image: "https://images.unsplash.com/photo-1593113589914-075990141ce7?q=80&w=1200&auto=format&fit=crop",
+      image: "/gallary/image/gallary-012.jpg",
+      fallbackImage: "/assets/gallery/images/gallery-012.jpeg",
       icon: <FaHandsHelping size={24} />
     }
   ];
@@ -105,8 +109,8 @@ const MissionPage = () => {
       {/* Mission Blocks */}
       <section className="mission-blocks" style={{ position: 'relative', zIndex: 1 }}>
         <div className="mission-orbs-wrapper">
-        <BackgroundOrbs count={20} />
-      </div>
+          <BackgroundOrbs count={20} />
+        </div>
         <div className="container">
           {missions.map((mission, index) => {
             const isEven = index % 2 !== 0; // 0 is first (odd visual), 1 is even visual
@@ -130,7 +134,7 @@ const MissionPage = () => {
                     className="mission-image" 
                     loading="lazy" 
                     onError={(e) => { 
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=1200&auto=format&fit=crop"; 
+                      e.currentTarget.src = mission.fallbackImage || "/assets/gallery/images/gallery-012.jpeg"; 
                     }} 
                   />
                 </motion.div>

@@ -26,6 +26,7 @@ export function GalleryCard({ item, onClick }: GalleryCardProps) {
         loading="lazy"
         decoding="async"
         className="gallery-card-img"
+        onError={(e) => { e.currentTarget.src = "/assets/gallery/images/gallery-012.jpeg"; }}
       />
       
       {/* Subtle bottom gradient for text legibility */}

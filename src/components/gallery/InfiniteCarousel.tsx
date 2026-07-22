@@ -55,31 +55,7 @@ export function InfiniteCarousel({ items, onCardClick, isLightboxOpen }: Infinit
     return () => clearInterval(interval);
   }, [isLightboxOpen, isHovered, navigate]);
 
-  // Wheel Navigation
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      if (isLightboxOpen) return;
-      
-      // Prevent native browser scrolling
-      e.preventDefault();
-      // Stop event bubbling so Lenis/SmoothScroll on window ignores this event completely
-      e.stopPropagation();
-      
-      // Only navigate on significant scroll delta
-      if (e.deltaY > 20 || e.deltaX > 20) {
-        navigate(1);
-      } else if (e.deltaY < -20 || e.deltaX < -20) {
-        navigate(-1);
-      }
-    };
-
-    // Attach passive: false to allow e.preventDefault() on this specific container
-    container.addEventListener('wheel', handleWheel, { passive: false });
-    return () => container.removeEventListener('wheel', handleWheel);
-  }, [isLightboxOpen, navigate]);
+  // Drag and click interactions are enabled; wheel events pass through natively to allow smooth vertical page scrolling.
 
   // Drag Navigation
   const handleDragEnd = (_e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {

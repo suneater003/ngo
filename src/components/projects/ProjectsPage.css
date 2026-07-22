@@ -213,3 +213,60 @@
 .project-body p {
   margin-bottom: 1rem;
 }
+
+/* Mobile Responsiveness Overrides */
+@media (max-width: 768px) {
+  .projects-hero {
+    min-height: auto;
+    padding: 2.5rem 1rem 1.5rem;
+  }
+
+  .projects-hero-title {
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+  }
+
+  .projects-list {
+    padding: 2rem 1rem 4rem;
+    gap: 4rem;
+  }
+
+  .project-row {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .project-image-container {
+    width: 100%;
+    height: 260px;
+    position: relative;
+    margin-bottom: 0;
+    border-radius: 1.25rem;
+  }
+
+  .project-image-content {
+    height: 260px;
+    object-fit: cover;
+  }
+
+  .project-text-container {
+    position: relative;
+    width: 92%;
+    margin: -3rem auto 0;
+    z-index: 10;
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-body {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}

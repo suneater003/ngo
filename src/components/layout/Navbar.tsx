@@ -26,6 +26,17 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   return (
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
@@ -62,21 +73,28 @@ export const Navbar = () => {
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
         >
-          {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+          {isOpen ? <X size={28} aria-hidden="true" /> : <Menu size={28} aria-hidden="true" />}
         </button>
       </div>
 
-      {/* Mobile Menu via Framer Motion */}
+      {/* Mobile Menu Full Screen Drawer */}
       <AnimatePresence>
         {isOpen && (
           <motion.nav 
             id="mobile-menu"
             className="navbar-links mobile-menu"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
           >
+            <button 
+              className="mobile-menu-close-btn"
+              onClick={() => setIsOpen(false)}
+              aria-label="Close navigation"
+            >
+              <X size={32} />
+            </button>
             <Link to="/" className={isActive('/', '') ? 'active' : ''} onClick={() => setIsOpen(false)}>होम</Link>
             <Link to="/mission" className={isActive('/mission') ? 'active' : ''} onClick={() => setIsOpen(false)}>मिशन</Link>
             <Link to="/projects" className={isActive('/projects') ? 'active' : ''} onClick={() => setIsOpen(false)}>परियोजनाएं</Link>

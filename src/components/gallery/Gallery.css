@@ -127,6 +127,7 @@
   max-width: 1400px;
   position: relative;
   height: 450px;
+  touch-action: pan-y;
 }
 
 .carousel-wrapper {
@@ -135,7 +136,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  touch-action: none;
+  touch-action: pan-y;
   cursor: grab;
   /* Softer, smoother edge fade mask (Matched to Video Showcase 7.5%) */
   mask-image: linear-gradient(to right, transparent, black 7.5%, black 92.5%, transparent);
@@ -353,12 +354,14 @@
 .lightbox-tags {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
   font-size: 0.875rem;
   color: #334155; /* Darkened for better contrast */
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 500;
+  padding-right: 3rem; /* Prevents text collision with close button */
 }
 
 .lightbox-category {
@@ -391,18 +394,26 @@
 
 .lightbox-close-btn {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: transparent;
-  border: none;
-  color: #999;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #475569;
   cursor: pointer;
-  padding: 0.5rem;
-  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 20;
 }
 
 .lightbox-close-btn:hover {
-  color: #1a1a1a;
+  background: #0f172a;
+  color: #ffffff;
+  transform: scale(1.05);
 }
 
 /* Responsive */
@@ -418,13 +429,53 @@
 }
 
 @media (max-width: 768px) {
+  .gallery-section {
+    padding: 3rem 0;
+  }
+
+  .gallery-header {
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+  }
+
   .gallery-stats {
     gap: 1.5rem;
   }
+
   .gallery-stat-number {
     font-size: 2rem;
   }
+
   .gallery-title {
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+    margin-bottom: 1rem;
+  }
+
+  .gallery-description {
+    margin-bottom: 2rem;
+  }
+
+  .carousel-floating-nav {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    z-index: 30;
+  }
+
+  .carousel-floating-nav.left {
+    left: 1rem;
+  }
+
+  .carousel-floating-nav.right {
+    right: 1rem;
+  }
+
+  .lightbox-content {
+    padding: 1.5rem;
+  }
+
+  .lightbox-title {
+    font-size: 1.5rem;
   }
 }

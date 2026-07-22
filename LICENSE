@@ -1,0 +1,41 @@
+END-USER LICENSE AGREEMENT (EULA) AND PROPRIETARY SOFTWARE LICENSE
+
+Copyright (c) 2026 Sakhi Greh Udyog Foundation. All Rights Reserved.
+
+This Proprietary Software License ("Agreement") is a legal agreement between you (either an individual or a single entity) and Sakhi Greh Udyog Foundation ("Owner") for the software, website architecture, source code, visual design, and associated media accompanying this license (collectively, the "Software").
+
+1. DEFINITIONS
+"Software" refers to the custom web application, including but not limited to its source code, object code, user interface (UI), user experience (UX) architecture, databases, multimedia assets (images, text, videos, logos), and any subsequent updates or modifications provided by the Owner.
+"Owner" refers to Sakhi Greh Udyog Foundation, headquartered in Patna, Bihar, India.
+
+2. OWNERSHIP AND INTELLECTUAL PROPERTY
+The Software is licensed, not sold. All right, title, and interest in and to the Software, including all copyrights, patents, trade secrets, trademarks, and other intellectual property rights, belong exclusively to the Sakhi Greh Udyog Foundation. This Agreement does not grant you any rights to trademarks or service marks of the Owner.
+
+3. GRANT OF LICENSE
+Subject to the strict compliance with the terms of this Agreement, the Owner grants a limited, non-exclusive, non-transferable, and revocable license to authorized personnel to access and manage the Software for the internal operational purposes of the Sakhi Greh Udyog Foundation. 
+
+For the general public, the license strictly permits interacting with the compiled, public-facing website through a standard web browser for informational purposes only.
+
+4. RESTRICTIONS ON USE
+You are strictly prohibited from engaging in any of the following activities without prior explicit, written consent from the authorized executive board of Sakhi Greh Udyog Foundation:
+a) Copying, duplicating, or reproducing any portion of the source code, visual design, or structural layout.
+b) Modifying, adapting, translating, or creating derivative works based on the Software.
+c) Reverse engineering, decompiling, disassembling, or otherwise attempting to discover the source code of the Software.
+d) Distributing, sublicensing, leasing, renting, selling, or commercially exploiting the Software.
+e) Removing, altering, or obscuring any copyright, trademark, or proprietary rights notices integrated into the Software.
+f) Using automated systems (e.g., scrapers, bots) to extract data, images, or structure from the Software for external use.
+
+5. THIRD-PARTY COMPONENTS
+The Software may include third-party open-source software components (such as React.js, Vite, Tailwind CSS, etc.). These components are governed by their respective open-source licenses (e.g., MIT, Apache 2.0). Nothing in this Agreement restricts your rights under, or grants you rights that supersede, the terms of any applicable open-source license for those specific components. However, the unique composition, custom logic, styling, and proprietary assets that form the overall Software remain the exclusive property of the Owner.
+
+6. TERMINATION
+This Agreement is effective until terminated. The Owner may terminate this license at any time, without notice, if you fail to comply with any term or condition of this Agreement. Upon termination, you must cease all use of the Software and destroy all copies of the source code and assets in your possession.
+
+7. DISCLAIMER OF WARRANTIES
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. THE OWNER DOES NOT WARRANT THAT THE SOFTWARE WILL BE ERROR-FREE, SECURE, OR UNINTERRUPTED.
+
+8. LIMITATION OF LIABILITY
+IN NO EVENT SHALL THE SAKHI GREH UDYOG FOUNDATION, ITS BOARD MEMBERS, DEVELOPERS, OR AFFILIATES BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+9. GOVERNING LAW AND JURISDICTION
+This Agreement shall be governed by and construed in accordance with the laws of India. Any legal actions or proceedings arising out of or related to this Agreement shall be brought exclusively in the competent courts located in Patna, Bihar, India, and all parties hereby consent to the personal jurisdiction thereof.

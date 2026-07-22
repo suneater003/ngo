@@ -70,6 +70,7 @@ export function Lightbox({ item, items, onClose, onNavigate }: LightboxProps) {
                 className="lightbox-image"
                 loading="lazy"
                 decoding="async"
+                onError={(e) => { e.currentTarget.src = "/assets/gallery/images/gallery-012.jpeg"; }}
               />
             </div>
             

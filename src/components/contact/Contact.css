@@ -244,19 +244,42 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .contact-section {
+    padding: 3rem 1rem;
+    min-height: auto;
+  }
+
   .contact-container {
     grid-template-columns: 1fr;
+    width: 100%;
+    border-radius: 1.25rem;
   }
   
   .form-row {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
   
   .contact-info-card {
-    padding: 2.5rem 1.5rem;
+    width: 100%;
+    padding: 2rem 1.25rem;
+    border-radius: 1.25rem 1.25rem 0 0;
+  }
+
+  .contact-info-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
   }
   
   .contact-form-wrapper {
-    padding: 2.5rem 1.5rem;
+    width: 100%;
+    padding: 2rem 1.25rem;
+    border-radius: 0 0 1.25rem 1.25rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.85rem 1.5rem;
   }
 }

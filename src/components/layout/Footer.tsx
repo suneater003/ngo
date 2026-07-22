@@ -24,6 +24,9 @@ export const Footer = () => {
       </div>
       <div className="footer-bottom">
         <p className="footer-copyright">&copy; {new Date().getFullYear()} सखी गृह उद्योग फाउंडेशन। सर्वाधिकार सुरक्षित।</p>
+        <div className="footer-legal-credentials">
+          <p>Registration No: U85500BR2025NILO80369</p>
+        </div>
       </div>
     </footer>
   );

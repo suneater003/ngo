@@ -45,7 +45,14 @@ const Teams: React.FC = () => {
                 style={{ cursor: 'pointer' }}
               >
                 <div className="team-avatar-wrapper">
-                  <img src={member.img} alt={member.name} className="team-avatar" loading="lazy" decoding="async" />
+                  <img 
+                    src={member.img} 
+                    alt={member.name} 
+                    className="team-avatar" 
+                    loading="lazy" 
+                    decoding="async" 
+                    onError={(e) => { e.currentTarget.src = "/assets/gallery/images/gallery-012.jpeg"; }}
+                  />
                 </div>
                 <div className="team-info">
                   <h3 className="team-name">{member.name}</h3>

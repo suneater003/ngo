@@ -143,11 +143,11 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .navbar-logo {
-    height: 40px;
+    height: 42px;
   }
   
   .navbar.scrolled .navbar-logo {
-    height: 35px;
+    height: 36px;
   }
   
   .navbar-actions {
@@ -161,16 +161,47 @@
   .mobile-menu {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    position: fixed;
+    inset: 0;
+    top: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-white, #ffffff);
+    z-index: 1000;
+    padding: 3rem 2rem;
+    overflow-y: auto;
+  }
+
+  .mobile-menu-close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--color-midnight, #0f172a);
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .mobile-menu a {
+    font-size: 1.35rem;
+    font-weight: 600;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    background-color: var(--color-white);
-    padding: 1.5rem;
-    gap: 1.5rem;
-    box-shadow: var(--shadow-hover);
-    border-top: 1px solid var(--border-color);
-    overflow: hidden;
+    max-width: 320px;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
   }
 
   .navbar-links a::after {
@@ -184,16 +215,23 @@
   }
   
   .mobile-contact {
-    display: inline-block;
+    display: flex !important;
     background-color: var(--color-savoy);
     color: white !important;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
+    padding: 0.85rem 2rem;
+    border-radius: 9999px;
     text-align: center;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    border-bottom: none !important;
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
   }
 
   .navbar-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
   }
 }

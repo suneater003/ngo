@@ -79,3 +79,25 @@
   margin: 0;
   font-weight: 500;
 }
+
+.footer-legal-credentials {
+  margin-top: 0.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-legal-credentials p {
+  font-size: 0.75rem; /* 12px - Keeps it subordinate */
+  letter-spacing: 0.05em; /* Adds premium breathability to uppercase technical text */
+  color: rgba(255, 255, 255, 0.5); /* Soft contrast against the dark background */
+  font-family: monospace, sans-serif; /* Monospace gives a subtle official/technical feel to the ID */
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-legal-credentials {
+    text-align: center;
+  }
+}

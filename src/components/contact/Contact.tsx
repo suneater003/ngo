@@ -1,32 +1,45 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import type { FormEvent } from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact: React.FC = () => {
-  const form = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
 
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!form.current) return;
+    const formElement = e.currentTarget;
 
     setIsSubmitting(true);
     setSubmitStatus(null);
 
+    // 1. Extract data safely from the native DOM event
+    const formData = new FormData(formElement);
+
+    // 2. Explicitly map the HTML 'name' attributes to the EmailJS variables
+    const templateParams = {
+      first_name: (formData.get('first_name') as string) || '',
+      last_name: (formData.get('last_name') as string) || '',
+      user_email: (formData.get('user_email') as string) || '',
+      user_phone: (formData.get('user_phone') as string) || '',
+      message: (formData.get('message') as string) || '',
+    };
+
     try {
-      await emailjs.sendForm(
+      // 3. Use .send() instead of .sendForm()
+      await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        form.current,
+        templateParams,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
+      console.log('SUCCESS!');
       setSubmitStatus('success');
-      form.current.reset();
+      formElement.reset(); // Clear the form
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('FAILED...', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -63,8 +76,8 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="social-items">
-            <a href="#" aria-label="Facebook" className="social-link"><FaFacebook className="social-icon" /></a>
-            <a href="#" aria-label="Instagram" className="social-link"><FaInstagram className="social-icon" /></a>
+            <a href="https://www.facebook.com/sakhi.grha.udyoga.samiti" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-link"><FaFacebook className="social-icon" /></a>
+            <a href="https://www.instagram.com/sakhi_grih_udhyog_foundation?igsh=dHptZGhjdXhxczBj" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link"><FaInstagram className="social-icon" /></a>
           </div>
 
           <div className="ambient-circle"></div>
@@ -73,7 +86,7 @@ const Contact: React.FC = () => {
 
         {/* Right Column: Form */}
         <div className="contact-form-wrapper">
-          <form ref={form} onSubmit={sendEmail} className="contact-form">
+          <form onSubmit={sendEmail} className="contact-form">
             <div className="form-row">
               <div className="form-group">
                 <input type="text" name="first_name" placeholder="First Name" required />
