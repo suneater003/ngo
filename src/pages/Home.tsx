@@ -4,6 +4,7 @@ import { Hero } from '../components/homepage/Hero';
 const Mission = lazy(() => import('../components/homepage/Mission'));
 const Projects = lazy(() => import('../components/homepage/Projects'));
 const GallerySection = lazy(() => import('../components/gallery/GallerySection'));
+const VideoPreview = lazy(() => import('../components/video/VideoPreview'));
 const Teams = lazy(() => import('../components/homepage/Teams'));
 
 export const Home = () => {
@@ -14,6 +15,7 @@ export const Home = () => {
         <Mission />
         <Projects />
         <GallerySection />
+        <VideoPreview />
         <Teams />
       </Suspense>
     </main>

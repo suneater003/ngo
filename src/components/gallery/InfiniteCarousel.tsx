@@ -15,6 +15,7 @@ export function InfiniteCarousel({ items, onCardClick, isLightboxOpen }: Infinit
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const clickTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Helper to wrap index around infinitely
   const getWrappedIndex = useCallback((index: number) => {
@@ -49,18 +50,23 @@ export function InfiniteCarousel({ items, onCardClick, isLightboxOpen }: Infinit
     
     const interval = setInterval(() => {
       navigate(1);
-    }, 3500);
+    }, 1500);
     
     return () => clearInterval(interval);
   }, [isLightboxOpen, isHovered, navigate]);
 
   // Wheel Navigation
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
     const handleWheel = (e: WheelEvent) => {
-      if (isLightboxOpen || !isHovered) return;
+      if (isLightboxOpen) return;
       
-      // Prevent page scrolling while hovering over carousel
+      // Prevent native browser scrolling
       e.preventDefault();
+      // Stop event bubbling so Lenis/SmoothScroll on window ignores this event completely
+      e.stopPropagation();
       
       // Only navigate on significant scroll delta
       if (e.deltaY > 20 || e.deltaX > 20) {
@@ -70,10 +76,10 @@ export function InfiniteCarousel({ items, onCardClick, isLightboxOpen }: Infinit
       }
     };
 
-    // Attach passive: false to allow e.preventDefault()
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    return () => window.removeEventListener('wheel', handleWheel);
-  }, [isHovered, isLightboxOpen, navigate]);
+    // Attach passive: false to allow e.preventDefault() on this specific container
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    return () => container.removeEventListener('wheel', handleWheel);
+  }, [isLightboxOpen, navigate]);
 
   // Drag Navigation
   const handleDragEnd = (_e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
@@ -98,6 +104,7 @@ export function InfiniteCarousel({ items, onCardClick, isLightboxOpen }: Infinit
   return (
     <div 
       className="carousel-master-container"
+      ref={containerRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

@@ -1,4 +1,5 @@
-import React, { useRef, useState, FormEvent } from 'react';
+import React, { useRef, useState } from 'react';
+import type { FormEvent } from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
